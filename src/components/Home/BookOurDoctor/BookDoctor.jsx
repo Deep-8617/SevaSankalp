@@ -99,7 +99,6 @@ const BookDoctor = () => {
 					<div className="col-12 col-md-3 col-lg-3">
 						<div className='mb-2 section-title text-center'>
 							<h2>Book Our Doctor</h2>
-<<<<<<< HEAD
 							<p className='m-0 text-secondary'>Your Premier Healthcare Team Awaits.</p>
 						</div>
 						<div className="form-text">
