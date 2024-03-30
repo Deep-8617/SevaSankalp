@@ -15,11 +15,11 @@ const BlogComment = () => {
                         </div>
                         <div>
                             <div className='mb-2'>
-                                <h6>Andrew Simon</h6>
-                                <p className='form-text mb-0'>August 2023</p>
+                                <h6>Ishita Nandi</h6>
+                                <p className='form-text mb-0'>March 2024</p>
                             </div>
                             <p className='form-text'>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur recusandae sed nemo illum distinctio minus enim hic eum saepe vel similique doloribus adipisci, autem deleniti dolores unde accusantium eos sequi aliquam, temporibus aspernatur iste! Necessitatibus, obcaecati architecto culpa illum fugiat delectus dolor, numquam autem quo suscipit impedit laboriosam id eos!
+                            Thank you for shedding light on such an important aspect of women's health. It's crucial to prioritize our well-being and have open discussions about topics like these. Understanding the unique challenges and needs of women's health is empowering and can lead to better overall care. Looking forward to more insightful content like this!
                             </p>
                         </div>
                     </div>
