@@ -1,15 +1,23 @@
-import React from 'react'
+import React from 'react';
 import './index.css';
 import Header from '../Shared/Header/Header';
 import Footer from '../Shared/Footer/Footer';
-import ImageHeading from '../../images/doc/doctor 5.jpg'
-import img from '../../images/logo.png'
+import ImageHeading from '../../images/doc/doctor 5.jpg';
+import img from '../../images/logo.png';
 import SubHeader from '../Shared/SubHeader';
 import { useGetAllBlogsQuery } from '../../redux/api/blogApi';
 import { Empty, message } from 'antd';
 import { Link } from 'react-router-dom';
 import { truncate } from '../../utils/truncate';
 import { useGetDoctorsQuery } from '../../redux/api/doctorApi';
+
+// Moved Upayan image imports to the top
+import firstach1 from '../../images/firstach1.png';
+import secondach1 from '../../images/secondach1.png';
+import thirdach1 from '../../images/thirdach1.png';
+import forthach1 from '../../images/forthach1.png';
+import fifthach1 from '../../images/fifthach1.png';
+import sixthach1 from '../../images/sixthach1.png';
 
 const About = () => {
     const { data, isError, isLoading } = useGetAllBlogsQuery({ limit: 4 });
@@ -101,7 +109,14 @@ const About = () => {
                                 Array(6).fill(null).map((_, id) => (
                                     <div className="col-lg-4 col-md-6 col-sm-6" key={id + 3}>
                                         <div className="award-img">
-                                            <img src={img} alt="" className="img-fluid" />
+                                            {/* Use different doctor achievement images */}
+                                            {id === 0 && <img src={firstach1} alt="" className="img-fluid" />}
+                                            {id === 1 && <img src={secondach1} alt="" className="img-fluid" />}
+                                            {id === 2 && <img src={thirdach1} alt="" className="img-fluid" />}
+                                            {id === 3 && <img src={forthach1} alt="" className="img-fluid" />}
+                                            {id === 4 && <img src={fifthach1} alt="" className="img-fluid" />}
+                                            {id === 5 && <img src={sixthach1} alt="" className="img-fluid" />}
+                                              {/* Add more conditions for other doctor achievement images */}
                                         </div>
                                     </div>
                                 ))
