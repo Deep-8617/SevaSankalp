@@ -17,6 +17,18 @@ import {
 const DashboardSidebar = () => {
     const { data, role } = useAuthCheck();
 
+    // Function to calculate age from date of birth
+    const calculateAge = (dob) => {
+        const dobDate = new Date(dob);
+        const currentDate = new Date();
+        const age = currentDate.getFullYear() - dobDate.getFullYear();
+        const monthDiff = currentDate.getMonth() - dobDate.getMonth();
+        if (monthDiff < 0 || (monthDiff === 0 && currentDate.getDate() < dobDate.getDate())) {
+            return age - 1;
+        }
+        return age;
+    };
+
     return (
         <div className="profile-sidebar p-3 rounded">
             <div className="p-2 text-center border-bottom">
@@ -37,8 +49,8 @@ const DashboardSidebar = () => {
                             <div className='profile-details'>
                                 <h5 className='mb-0'>{data?.firstName + " " + data?.lastName}</h5>
                                 <div className='mt-2'>
-                                    <p className=' form-text m-0'>24 Jul 1983, 38 Years</p>
-                                    <p className=' form-text m-0'> New Yourk , USA</p>
+                                    <p className=' form-text m-0'>{`${data?.address}, ${calculateAge(data?.dateOfBirth)} Years`}</p>
+                                    <p className=' form-text m-0'>{`${data?.state}, ${data?.country}`}</p>
                                     <p className=' form-text m-0'>{data?.email}</p>
                                 </div>
                             </div>
