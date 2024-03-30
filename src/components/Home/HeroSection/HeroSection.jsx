@@ -7,9 +7,9 @@ const HeroSection = () => {
         <section id="hero" className="d-flex align-items-center">
             <div className="container">
                 <div>
-                    <small>TOTAL HEALTH CARE SOLUTION</small>
+                    <small style={{ color: 'white' }}>TOTAL HEALTH CARE SOLUTION</small>
                     <h1>Your Most Trusted <br />Health Partner</h1>
-                    <small>Healing, Thriving, Uniting ~ Your Path to Wellness</small>
+                    <small style={{ color: 'white' }}>Healing, Thriving, Uniting ~ Your Path to Wellness</small>
                 </div>
                 <div className="d-flex justify-content-start gap-2">
                     <Link to={'/doctors'} className="btn-get-started scrollto">Get Started</Link>
