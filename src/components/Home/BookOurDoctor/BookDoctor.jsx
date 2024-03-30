@@ -102,8 +102,8 @@ const BookDoctor = () => {
 							<p className='m-0 text-secondary'>Your Premier Healthcare Team Awaits.</p>
 						</div>
 						<div className="form-text">
-							<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.</p>
-							<p>Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover  Various versions have evolved over the years, sometimes</p>
+							<p>Meet Our Exceptional Team of Doctors, Where Compassion Meets Expertise.</p>
+							<p>Discover a world where your health is our priority, where every interaction is infused with compassion and expertise. From routine check-ups to complex procedures, our dedicated team of doctors is here to ensure you receive the best possible care. Trust in our unwavering commitment to your well-being and embark on a journey towards a healthier, happier you. Welcome to our community of excellence in healthcare, where your health is our passion.</p>
 							<div className='text-center text-md-start my-3 my-md-0'>
 								<Link to={'/doctors'} className='more-btn text-center text-md-start'>See More</Link>
 							</div>

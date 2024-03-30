@@ -17,7 +17,7 @@ const Gallery = () => {
             <div className="text-center mb-5">
                 <div className="section-title mb-3">
                     <h2>Gallery</h2>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p>Discover Our Captivating Gallery of Moments.</p>
                 </div>
             </div>
 
