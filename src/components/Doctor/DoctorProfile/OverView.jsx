@@ -29,19 +29,19 @@ const OverView = () => {
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: '#2e81c4', color: '#000' }}
                         contentArrowStyle={{ borderRight: '7px solid  #2e81c4' }}
-                        date="2011 - 2000"
+                        date={doctorData.completionYear}
                         iconStyle={{ background: '#2e81c4', color: '#fff' }}
                         icon={<FaBriefcase />}
                     >
-                        <h5 className="text-white">American Dental Medical University</h5>
-                        <h6 className="text-white">Miami, FL</h6>
+                        <h5 className="text-white">{doctorData.college}</h5>
+                       {/* <h6 className="text-white">Miami, FL</h6>*/}
                         <p style={{ fontSize: '14px' }}>
-                            Creative Direction, User Experience, Visual Design, Project Management, Team Leading
+                            {doctorData.degree}
                         </p>
                     </VerticalTimelineElement>
 
-
-                    <VerticalTimelineElement
+                {/*
+                   <VerticalTimelineElement
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: '#2e81c4', color: '#000' }}
                         contentArrowStyle={{ borderRight: '7px solid  #2e81c4' }}
@@ -54,7 +54,7 @@ const OverView = () => {
                         <p style={{ fontSize: '14px' }}>
                             Creative Direction, User Experience, Visual Design, Project Management, Team Leading
                         </p>
-                    </VerticalTimelineElement>
+                    </VerticalTimelineElement> */}
 
                 </VerticalTimeline>
 
@@ -63,6 +63,7 @@ const OverView = () => {
                 <h5 className='overview-text'>Work & Experience</h5>
 
                 <VerticalTimeline>
+            {/*
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: '#2e81c4', color: '#000' }}
@@ -77,19 +78,21 @@ const OverView = () => {
                             Creative Direction, User Experience, Visual Design, Project Management, Team Leading
                         </p>
                     </VerticalTimelineElement>
+                */}
 
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: '#2e81c4', color: '#000' }}
                         contentArrowStyle={{ borderRight: '7px solid  #2e81c4' }}
-                        date="2007 - 2010 (3 years)"
+                        date={`${doctorData.expericenceStart} - ${doctorData.expericenceEnd}`}
                         iconStyle={{ background: '#2e81c4', color: '#fff' }}
                         icon={<FaBriefcase />}
+                        position="right"
                     >
-                        <h5 className="text-white">Comfort Care Dental Clinic</h5>
-                        <h6 className="text-white">Miami, FL</h6>
+                        <h5 className="text-white">{doctorData.experienceHospitalName}</h5>
+                        {/*<h6 className="text-white">Miami, FL</h6>*/}
                         <p style={{ fontSize: '14px' }}>
-                            Creative Direction, User Experience, Visual Design, Project Management, Team Leading
+                            {doctorData.designation}
                         </p>
                     </VerticalTimelineElement>
 
@@ -97,13 +100,14 @@ const OverView = () => {
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: '#2e81c4', color: '#000' }}
                         contentArrowStyle={{ borderRight: '7px solid  #2e81c4' }}
-                        date="2005 - 2007 (2 years)"
+                        date={`${doctorData.expericenceEnd} - Present`}
                         iconStyle={{ background: '#2e81c4', color: '#fff' }}
                         icon={<FaBriefcase />}
+                        position="left"
                     >
-                        <h5 className="text-white">Dream Smile Dental Practice</h5>
-                        <h6 className="text-white">Miami, FL</h6>
-                        <p style={{ fontSize: '14px' }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, dignissimos.</p>
+                        <h5 className="text-white">{doctorData.clinicName}</h5>
+                        {/*<h6 className="text-white">Miami, FL</h6>*/}
+                        <p style={{ fontSize: '14px' }}>{doctorData.clinicAddress}</p>
                     </VerticalTimelineElement>
 
 
@@ -120,15 +124,16 @@ const OverView = () => {
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: '#2e81c4', color: '#000' }}
                         contentArrowStyle={{ borderRight: '7px solid  #2e81c4' }}
-                        date="July 2019"
+                        date={doctorData.awardYear}
                         iconStyle={{ background: '#2e81c4', color: '#fff' }}
                         icon={<FaBriefcase />}
+                        position="right"
                     >
-                        <h5 className="text-white">Humanitarian Award</h5>
-                        <h6 className="text-white">Miami, FL</h6>
-                        <p style={{ fontSize: '14px' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                        <h5 className="text-white">{doctorData.award}</h5>
+                        {/*<h6 className="text-white">Miami, FL</h6>*/}
+                        <p style={{ fontSize: '14px' }}>{`${doctorData.firstName} ${doctorData.lastName}`}</p>
                     </VerticalTimelineElement>
-
+{/*
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: '#2e81c4', color: '#000' }}
@@ -154,29 +159,33 @@ const OverView = () => {
                         <h6 className="text-white">Miami, FL</h6>
                         <p style={{ fontSize: '14px' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
                     </VerticalTimelineElement>
-
+*/}
                 </VerticalTimeline>
             </div>
             <div>
                 <h5 className='overview-text'>Services</h5>
                 <ul>
-                    <li>Tooth cleaning </li>
+                    <li>{doctorData.services}</li>
+                    {/*
                     <li>Root Canal Therapy</li>
                     <li>Implants</li>
                     <li>Composite Bonding</li>
                     <li>Fissure Sealants</li>
                     <li>Surgical Extractions</li>
+                    */}
                 </ul>
             </div>
             <div>
                 <h5 className='overview-text'>Specializations</h5>
                 <ul className="clearfix">
-                    <li>Children Care</li>
+                    <li>{doctorData.specialization}</li>
+                    {/*
                     <li>Dental Care</li>
                     <li>Oral and Maxillofacial Surgery </li>
                     <li>Orthodontist</li>
                     <li>Periodontist</li>
                     <li>Prosthodontics</li>
+                    */}
                 </ul>
             </div>
         </div>
