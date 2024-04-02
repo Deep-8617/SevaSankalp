@@ -36,8 +36,8 @@ export const doctorApi = baseApi.injectEndpoints({
                 },
             }),
             invalidatesTags: [tagTypes.doctor]
-        })
+        }),  
     })
 })
 
-export const { useGetDoctorsQuery, useGetDoctorQuery, useUpdateDoctorMutation } = doctorApi
+export const { useGetDoctorsQuery, useGetDoctorQuery, useUpdateDoctorMutation} = doctorApi
