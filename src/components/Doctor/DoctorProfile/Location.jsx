@@ -1,11 +1,12 @@
-import React from 'react'
+//import React from 'react'
+import React, { useEffect,useState } from 'react'; // Import useEffect
 import img from '../../../images/chair.png'
 import { useParams } from 'react-router-dom';
 import {useGetDoctorQuery} from '../../../redux/api/doctorApi';
-import {useGetAppointmentTimeQuery} from '../../../redux/api/timeSlotApi';
+import { useGetTimeSlotQuery } from '../../../redux/api/timeSlotApi';
 
 const Location = () => {
-    const { id } = useParams();
+    const {id} = useParams();
     const { data: doctorData} = useGetDoctorQuery(id);
 
     return (
@@ -30,7 +31,7 @@ const Location = () => {
                             </div>
                         </div>
                     </div>
-
+                        
                     <div className="col-md-4">
                         <div className="clinic-timing">
                             <div>
