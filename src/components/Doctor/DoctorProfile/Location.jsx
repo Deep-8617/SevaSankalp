@@ -3,14 +3,11 @@ import React, { useEffect,useState } from 'react'; // Import useEffect
 import img from '../../../images/chair.png'
 import { useParams } from 'react-router-dom';
 import {useGetDoctorQuery} from '../../../redux/api/doctorApi';
-import { useGetAppointmentTimeQuery } from '../../../redux/api/timeSlotApi';
+import { useGetDoctorTimeSlotQuery } from '../../../redux/api/timeSlotApi';
 
 const Location = () => {
-    const {id,doctorId} = useParams();
+    const {id} = useParams();
     const { data: doctorData} = useGetDoctorQuery(id);
-    const { data: time } = useGetAppointmentTimeQuery({id: doctorId });
-
-
     return (
         <div className="location-list">
             <div className='card shadow p-3 border-0 mb-3'>
@@ -57,7 +54,7 @@ const Location = () => {
                     </div>
                     <div className="col-md-2">
                         <div className="consult-price">
-                            {time?.day}
+                            
                         </div>
                     </div>
                 </div>
