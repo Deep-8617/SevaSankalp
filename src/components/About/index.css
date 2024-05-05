@@ -18,7 +18,7 @@
     width: 48%;
     height: 100%;
     top: 0;
-    left: 0;
+    left: 0px;
     position: absolute;
     content: "";
     background: url("../../images/doc/doc4.jpg") no-repeat 50% 50%;
