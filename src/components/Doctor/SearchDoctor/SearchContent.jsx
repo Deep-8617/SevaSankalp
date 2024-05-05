@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useEffect,useState } from 'react'; // Import useEffect
+import { useParams } from 'react-router-dom';
+import {useGetDoctorQuery} from '../../../redux/api/doctorApi';
+import { FaRupeeSign } from 'react-icons/fa';
+//import React from 'react';
 import { Link } from 'react-router-dom';
 import showImg from '../../../images/specialities/specialities-01.png'
 import StarRatings from 'react-star-ratings';
@@ -8,6 +12,7 @@ import { FaLocationArrow, FaRegThumbsUp, FaDollarSign, FaComment } from "react-i
 
 const SearchContent = ({ data }) => {
     const services = data?.services?.split(',')
+    //test
     return (
         <div className="mb-4 rounded" style={{ background: '#f3f3f3' }}>
             <div className='d-flex p-3 justify-content-between'>
@@ -17,8 +22,8 @@ const SearchContent = ({ data }) => {
                     </div>
                     <div className="doc-info">
                         <h5 className='mb-0'><Link to={`/doctors/profile/${data?.id}`}>Dr. {data?.firstName + ' ' + data?.lastName}</Link></h5>
-                        <p className='m-0 form-text'>{data?.designation}</p>
-                        <p className="doc-department m-0"><img src={showImg} className="img-fluid" alt="Speciality" />Urology</p>
+                        
+                        <p className="doc-department m-0"><img src={showImg} className="img-fluid" alt="Speciality" />{data.services}</p>
 
                         <div className='d-flex align-items-center'>
                             <div>
@@ -64,9 +69,9 @@ const SearchContent = ({ data }) => {
                     <div className="clini-infos">
                         <ul>
                             <li><FaRegThumbsUp />  97%</li>
-                            <li><FaComment /> 4 Feedback</li>
-                            <li><FaLocationArrow /> Newyork, USA</li>
-                            <li><FaDollarSign /> $150 - $250</li>
+                            <li><FaComment /> Feedback</li>
+                            <li><FaLocationArrow />{data?.address}</li>
+                            <li><FaDollarSign /> {data?.price}</li>
                         </ul>
                     </div>
                     <div className="clinic-booking">
