@@ -18,7 +18,7 @@ const Footer = () => {
 									</Link>
 								</div>
 								<div className="footer-about-content">
-									<p className='form-text' style={{maxWidth:200}}>MediSeva ensures privacy, respect, and accuracy in connecting users with healthcare professionals. We prioritize transparency, professionalism, and legal compliance.</p>
+									<p className='form-text' style={{maxWidth:200}}>SevaSankalp: Where Privacy, Respect, and Accuracy Define Our Connection to Healthcare Professionals. We're Committed to Transparency, Professionalism, and Legal Compliance.</p>
 								</div>
 							</div>
 						</div>

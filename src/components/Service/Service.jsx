@@ -50,7 +50,7 @@ const Service = () => {
   return (
     <>
       <Header />
-      <SubHeader title="Service" subtitle="Lorem ipsum dolor sit amet consectetur adipisicing." />
+      <SubHeader title="Service" subtitle="Your Health, Our Priority: Comprehensive Care Services." />
 
       <div className="container" style={containerStyle}>
         {imagesData.map((data, index) => (
@@ -70,8 +70,8 @@ const Service = () => {
             <div className="col-lg-7">
               <div className="d-flex align-items-center">
               <div className="mb-4 section-title text-center">
-                <h2 className='text-uppercase' style={{ color: 'white' }}>We are pleased to offer you the</h2>
-                <p className='form-text' style={{ color: 'white' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, sed.</p>
+                <h2 className='text-uppercase' style={{ color: 'white' }}>Welcome to a World of Service Excellence: Discover Our Offerings!</h2>
+                <p className='form-text' style={{ color: 'white' }}>Trust SevaSankalp for Reliable Appointments</p>
                 <Link to={'/doctors'} className="btn-get-started scrollto" style={{ color: 'white' }}>Get Started</Link>
               </div>
               </div>

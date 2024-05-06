@@ -72,7 +72,7 @@ const About = () => {
     return (
         <>
             <Header />
-            <SubHeader title="about us" subtitle="Lorem ipsum dolor sit amet consectetur adipisicing." />
+            <SubHeader title="about us" subtitle="Empowering Health, Transforming Lives: Discover SevaSankalp's Commitment to Care." />
             <div className="container" style={{ marginBottom: 100, marginTop: 100 }}>
                 <div className="row p-5">
                     <div className="col-lg-4">
@@ -160,7 +160,7 @@ const About = () => {
                             <span>Suvendu Adhikari</span>
                         </div>
                         <p className='form-text'>
-                            Mediseva has truly revolutionized the healthcare landscape, providing unmatched convenience and trustworthy services. I wholeheartedly recommend it to anyone in need of superior healthcare solutions.
+                            SevaSankalp surpassed my expectations! From seamless appointment booking to expert care, their platform made my healthcare journey smooth and stress-free. I highly recommend it to anyone seeking convenience and quality in healthcare services.
                         </p>
                     </div>
                 </div>
