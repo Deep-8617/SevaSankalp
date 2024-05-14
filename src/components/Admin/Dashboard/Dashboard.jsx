@@ -16,7 +16,7 @@ const AdminDashboard = () => {
                                         <i className="fe fe-users"></i>
                                     </span>
                                     <div className="dash-count">
-                                        <h3>168</h3>
+                                        <h3>199</h3>
                                     </div>
                                 </div>
                                 <div className="dash-widget-info">
