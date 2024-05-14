@@ -11,7 +11,8 @@ const CheckoutPage = ({ handleChange, selectValue, isCheck, setIsChecked, data, 
 
     let price = data?.price ? data.price : 60;
 
-    const vat = (15 / 100) * (Number(price))
+    const vat = ((18 / 100) * Number(price)).toFixed(2);
+
     return (
         <div className="container mt-5">
             <div className="row">
@@ -40,7 +41,7 @@ const CheckoutPage = ({ handleChange, selectValue, isCheck, setIsChecked, data, 
                                         checked={paymentType === 'cash'}
                                     />
                                     <span className="ms-2"></span>
-                                    Cash
+                                    Debit Card
                                 </label>
                             </div>
                             <di mb-3v className="col-md-6">
@@ -89,12 +90,12 @@ const CheckoutPage = ({ handleChange, selectValue, isCheck, setIsChecked, data, 
                             <div>
                                 <input type="radio"
                                     name="paymentMethod"
-                                    value="payoneer"
+                                    value="Payoneer"
                                     onChange={(e) => handleChange(e)}
-                                    checked={paymentMethod === 'payoneer'}
+                                    checked={paymentMethod === 'Payoneer'}
                                 />
                                 <span className="checkmark ms-3"></span>
-                                Payoneer
+                                mastercard
                             </div>
                         </div>
                         <div className="terms-accept">
@@ -133,13 +134,13 @@ const CheckoutPage = ({ handleChange, selectValue, isCheck, setIsChecked, data, 
                             <ul className="booking-fee">
                                 <li>Consulting Fee <span>${price}</span></li>
                                 <li>Booking Fee <span>$10</span></li>
-                                <li>Vat (Including 15%) <span>$ {vat}</span></li>
+                                <li>GST (Including 18%) <span>$ {vat}</span></li>
                             </ul>
 
                             <ul className="booking-total">
                                 <li className='d-flex justify-content-between'>
                                     <span className='fw-bold'>Total</span>
-                                    <span className="total-cost" style={{ color: '#1977cc' }}>${(Number(price) + 10 + vat)}</span>
+                                    <span className="total-cost" style={{ color: '#1977cc' }}>${(Number(price) + 10 + Number(vat))}</span>
                                 </li>
                             </ul>
                         </div>
