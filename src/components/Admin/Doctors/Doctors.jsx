@@ -1,11 +1,10 @@
 import React from "react";
 import AdminLayout from "../AdminLayout/AdminLayout";
 import "./Doctors.css";
-import userImg from "../../../images/avatar.jpg";
 import { useGetDoctorsQuery } from "../../../redux/api/doctorApi";
 
 const Doctors = () => {
-  const { data, isLoading, isError } = useGetDoctorsQuery({ limit: 4 });
+  const { data, isLoading, isError } = useGetDoctorsQuery();
   const doctors = data?.doctors;
 
   return (
@@ -42,7 +41,9 @@ const Doctors = () => {
                                   alt="Profile Image"
                                 />
                               </a>
-                              <a>Dr. {item.firstName} {item.lastName}</a>
+                              <a>
+                                Dr. {item.firstName} {item.lastName}
+                              </a>
                             </h2>
                           </td>
                           <td>{item.designation}</td>
