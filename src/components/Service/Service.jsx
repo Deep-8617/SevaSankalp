@@ -36,7 +36,12 @@ const Service = () => {
     marginBottom: '20px',
     borderRadius: '10px',
     overflow: 'hidden', // This ensures the rounded corners
-    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)' // Optional: adds a shadow for depth
+    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)', // Optional: adds a shadow for depth
+    transition: 'transform 0.3s ease-in-out' // Smooth transition for the hover effect
+  };
+
+  const cardHoverStyle = {
+    transform: 'scale(1.05)' // Slightly enlarge the card on hover
   };
 
   const imageStyle = {
@@ -54,7 +59,13 @@ const Service = () => {
 
       <div className="container" style={containerStyle}>
         {imagesData.map((data, index) => (
-          <div className="card shadow border-0 mb-5" style={cardStyle} key={index}>
+          <div
+            className="card shadow border-0 mb-5"
+            style={cardStyle}
+            key={index}
+            onMouseEnter={(e) => e.currentTarget.style.transform = cardHoverStyle.transform}
+            onMouseLeave={(e) => e.currentTarget.style.transform = 'none'}
+          >
             <img src={data.img} alt="" className="img-fluid rounded" style={imageStyle} />
             <div className="p-2">
               <h4 className="mt-4 mb-2">{data.heading}</h4>

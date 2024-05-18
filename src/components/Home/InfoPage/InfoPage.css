@@ -12,6 +12,7 @@
   color: #fff;
 }
 
+
 .why-us .content p {
   margin-bottom: 30px;
 }
@@ -41,6 +42,14 @@
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   padding: 40px 30px;
   width: 100%;
+  /* Add transition for smooth hover effect */
+  transition: transform 0.3s ease-in-out; 
+}
+
+.why-us .icon-boxes .icon-box:hover {
+  /* Make the card slightly larger and move it up on hover */
+  transform: scale(1.05) translateY(-5px); 
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow */
 }
 
 .why-us .icon-boxes .icon-box .icon {
