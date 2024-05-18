@@ -30,19 +30,33 @@ const About = () => {
     if (!DoctorIsLoading && doctorIsError) doctorContent = <div>Something Went Wrong !</div>
     if (!DoctorIsLoading && !doctorIsError && doctors?.length === 0) doctorContent = <div><Empty /></div>
     if (!DoctorIsLoading && !doctorIsError && doctors?.length > 0) doctorContent =
-        <>
-            {doctors && doctors.map((item, id) => (
-                <div className="col-lg-3 col-md-6 col-sm-6" key={id + item.id}>
-                    <div className="card shadow border-0 mb-5 mb-lg-0">
-                        {item.img && <img src={item.img} className="img-fluid w-100 img-profile" alt="" />}
-                        <div className="p-2">
-                            <h4 className="mt-4 mb-0" style={{ color: '#223a66' }}><a>{item?.firstName + ' ' + item?.lastName}</a></h4>
-                            <p>{item?.designation}</p>
+        <div className="rolling-container">
+            <div className="rolling-wrapper">
+                {doctors && doctors.map((item, id) => (
+                    <div className="doctor-card" key={id + item.id}>
+                        <div className="card shadow border-0 mb-5 mb-lg-0">
+                            {item.img && <img src={item.img} className="img-fluid w-100 img-profile" alt="" />}
+                            <div className="p-2">
+                                <h4 className="mt-4 mb-0" style={{ color: '#223a66' }}><a>{item?.firstName + ' ' + item?.lastName}</a></h4>
+                                <p>{item?.designation}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            ))}
-        </>
+                ))}
+                {/* Duplicate the doctor cards to create a continuous scroll effect */}
+                {doctors && doctors.map((item, id) => (
+                    <div className="doctor-card" key={id + item.id + doctors.length}>
+                        <div className="card shadow border-0 mb-5 mb-lg-0">
+                            {item.img && <img src={item.img} className="img-fluid w-100 img-profile" alt="" />}
+                            <div className="p-2">
+                                <h4 className="mt-4 mb-0" style={{ color: '#223a66' }}><a>{item?.firstName + ' ' + item?.lastName}</a></h4>
+                                <p>{item?.designation}</p>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
 
     let content = null;
     if (!isLoading && isError) content = <div>{message.error('Something went Wrong!')}</div>
@@ -68,7 +82,7 @@ const About = () => {
                 ))
             }
         </>
-    
+
     return (
         <>
             <Header />
@@ -170,4 +184,4 @@ const About = () => {
     )
 }
 
-export default About;
+export default About; 

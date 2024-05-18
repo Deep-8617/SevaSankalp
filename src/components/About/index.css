@@ -1,34 +1,30 @@
-.img-profile {
-    max-width: 100%;
-    height: 200px; /* Adjust the height as needed */
-    object-fit: cover; /* This ensures the image fills the box without stretching */
-    border-radius: 15px; /* Add border-radius for rounded corners */
-}
+/* Add this to your index.css file */
 
-.award-img {
-    height: 120px;
-    margin-bottom: 10px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    background: #eff0f3;
-    object-fit: cover;
+/* Container for the rolling cards */
+.rolling-container {
     overflow: hidden;
-    border-radius: 15px;
-}
-
-.say-about {
     position: relative;
 }
 
-.say-about:before {
-    width: 48%;
-    height: 100%;
-    top: 0;
-    left: 0px;
-    position: absolute;
-    content: "";
-    background: url("../../images/doc/doc4.jpg") no-repeat 50% 50%;
-    background-size: cover; /* Ensures the image covers the whole area */
-    border-radius: 15px; /* Add border-radius for rounded corners */
+/* Wrapper for the cards to animate the scrolling */
+.rolling-wrapper {
+    display: flex;
+    animation: roll 20s linear infinite;
+}
+
+/* Keyframes for the rolling animation */
+@keyframes roll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Individual card styling */
+.doctor-card {
+    flex: 0 0 25%; /* Adjust the width of each card */
+    box-sizing: border-box;
+    padding: 0 10px;
 }
