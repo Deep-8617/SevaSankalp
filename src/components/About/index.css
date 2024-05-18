@@ -33,30 +33,31 @@
     border-radius: 15px; /* Add border-radius for rounded corners */
 }
 
-/* Rolling animation for the doctor cards */
+/* Container for the rolling cards */
 .rolling-container {
     overflow: hidden;
     position: relative;
-    white-space: nowrap;
-    margin-top: 20px;
 }
 
+/* Wrapper for the cards to animate the scrolling */
 .rolling-wrapper {
-    display: inline-block;
+    display: flex;
     animation: roll 20s linear infinite;
 }
 
-.doctor-card {
-    display: inline-block;
-    vertical-align: top;
-    margin-right: 10px;
-}
-
+/* Keyframes for the rolling animation */
 @keyframes roll {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(-100%);
     }
+}
+
+/* Individual card styling */
+.doctor-card {
+    flex: 0 0 25%; /* Adjust the width of each card */
+    box-sizing: border-box;
+    padding: 0 10px;
 }
