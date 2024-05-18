@@ -176,7 +176,11 @@ const createAppointmentByUnAuthenticateUser = async (payload: any): Promise<Appo
 }
 
 const getAllAppointments = async (): Promise<Appointments[] | null> => {
-    const result = await prisma.appointments.findMany();
+    const result = await prisma.appointments.findMany({
+        include: {
+            doctor: true,
+        }
+    });
     return result;
 }
 
