@@ -5,6 +5,13 @@ const APPOINTMENT_URL = '/appointment'
 
 export const appointmentApi = baseApi.injectEndpoints({
     endpoints: (build) => ({
+        getAllAppointments: build.query({
+            query: () => ({
+              url: APPOINTMENT_URL,
+              method: 'GET', 
+            }),
+            invalidatesTags: [tagTypes.appointments]
+        }),
         createAppointment: build.mutation({
             query: (data) => ({
                 url: `${APPOINTMENT_URL}/create`,
@@ -90,6 +97,7 @@ export const appointmentApi = baseApi.injectEndpoints({
 })
 
 export const { 
+    useGetAllAppointmentsQuery,
     useGetDoctorAppointmentsQuery,
     useGetPatientAppointmentsQuery,
     useGetDoctorPatientsQuery,
