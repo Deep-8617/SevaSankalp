@@ -141,14 +141,14 @@
 @media only screen and (min-width: 576px) and (max-width: 767px) {
     .input-container {
         width: calc(100% - 140px); /* Adjusted width for medium screens */
-        right: 60px; /* Adjusted right position */
+         /* Adjusted right position */
     }
 }
 
 /* For large devices (e.g., desktops) */
 @media only screen and (min-width: 768px) {
     .input-container {
-        width:26%; /* Adjusted width for large screens */
+        width:23%; /* Adjusted width for large screens */
          /* Adjusted right position */
     }
 }
