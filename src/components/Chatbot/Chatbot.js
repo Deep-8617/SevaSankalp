@@ -7,8 +7,9 @@ import './Chatbot.css';
 const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState([
-        { from: 'bot', text: 'Hello! How can I help you today?' }
+        { from: 'bot', text: 'Welcome to SevaSankalp! I am SevaBot, your virtual assistant. Our company was founded in 2023 by five MCA students with a mission to provide excellent healthcare services. How can I assist you today?' }
     ]);
+    
 
     const predefinedQA = {
         'what are your working hours': 'Our working hours are 9 AM to 5 PM, Monday to Friday.',
