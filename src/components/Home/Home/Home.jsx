@@ -11,6 +11,7 @@ import Header from '../../Shared/Header/Header';
 import Service from '../Services/Service';
 import Gallery from '../Gallery/Gallery';
 import OurDoctors from '../OurDoctor/OurDoctors';
+import Chatbot from '../../Chatbot/Chatbot';
 
 const Home = () => {
     return (
@@ -23,10 +24,11 @@ const Home = () => {
             <BookDoctor />
             <Blog />
             <Availabe />
-            <OurDoctors/>
+            <OurDoctors />
             <Testimonial />
-            <Gallery/>
+            <Gallery />
             <Footer />
+            <Chatbot />
         </>
     );
 };

@@ -1,0 +1,94 @@
+.chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    max-height: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.chatbot-icon {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.chatbot-body {
+    background-color: #fff;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.message {
+    padding: 5px 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.message.bot {
+    background-color: #f1f1f1;
+    align-self: flex-start;
+}
+
+.message.user {
+    background-color: #007bff;
+    color: #fff;
+    align-self: flex-end;
+}
+
+.input-container {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding-top: 5px;
+}
+
+.chatbot input[type="text"] {
+    flex-grow: 1;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 5px; /* Adjust this value to move the send button left or right */
+    box-sizing: border-box;
+}
+
+.send-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.send-button:hover {
+    background-color: #0056b3;
+}
+
+.send-button svg {
+    display: block; /* Ensures the icon takes up the entire button */
+}
