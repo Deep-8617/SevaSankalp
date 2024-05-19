@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComments, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faComments, faPaperPlane, faTimes } from '@fortawesome/free-solid-svg-icons';
 import './Chatbot.css';
 
 const Chatbot = () => {
@@ -8,6 +8,7 @@ const Chatbot = () => {
     const [messages, setMessages] = useState([
         { from: 'bot', text: 'Welcome to SevaSankalp! I am your SevaBot, How can I assist you today?' }
     ]);
+    const messagesEndRef = useRef(null);
 
     const predefinedQA = {
         'what are your working hours': 'Our working hours are 9 AM to 5 PM, Monday to Friday.',
@@ -30,7 +31,6 @@ const Chatbot = () => {
         'do you offer diet and nutrition advice': 'Yes, our dietitians can provide personalized diet and nutrition advice.',
         'what should i do in case of a medical emergency': 'In case of a medical emergency, please call 911 or go to the nearest emergency room.',
         'do you have specialists available': 'Yes, we have a range of specialists including cardiologists, dermatologists, and orthopedic surgeons.',
-        // Add more predefined questions and answers here
     };
 
     const quickReplies = [
@@ -67,9 +67,11 @@ const Chatbot = () => {
         ]);
 
         let botResponse = 'Sorry, I do not understand.';
-        for (const [key, value] of Object.entries(predefinedQA)) {
-            if (userMessage.includes(key)) {
-                botResponse = value;
+        const messageKeys = Object.keys(predefinedQA);
+        for (const key of messageKeys) {
+            const regex = new RegExp(`\\b${key}\\b`, 'i');
+            if (regex.test(userMessage)) {
+                botResponse = predefinedQA[key];
                 break;
             }
         }
@@ -80,19 +82,33 @@ const Chatbot = () => {
         ]);
     };
 
+    useEffect(() => {
+        if (messagesEndRef.current) {
+            messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [messages]);
+
     return (
-        <div className={`chatbot ${isOpen ? 'open' : ''}`} style={{opacity: '0.9'}}>
-            <div className="chatbot-icon" onClick={handleToggle}>
-                <FontAwesomeIcon icon={faComments} size="2x" />
-            </div>
+        <div className={`chatbot ${isOpen ? 'open' : ''}`} style={{ opacity: '0.9' }} aria-live="polite">
+            {!isOpen && (
+                <div className="chatbot-icon" onClick={handleToggle} role="button" aria-label="Open chatbot">
+                    <FontAwesomeIcon icon={faComments} size="2x" />
+                </div>
+            )}
             {isOpen && (
                 <div className="chatbot-body">
+                    <div className="chatbot-header">
+                        <button className="close-button" onClick={handleToggle} aria-label="Close chatbot">
+                            <FontAwesomeIcon icon={faTimes} />
+                        </button>
+                    </div>
                     <div className="messages">
                         {messages.map((msg, index) => (
                             <div key={index} className={`message ${msg.from}`}>
                                 {msg.text}
                             </div>
                         ))}
+                        <div ref={messagesEndRef} />
                     </div>
                     <div className="quick-replies">
                         {quickReplies.map((reply, index) => (
@@ -102,10 +118,10 @@ const Chatbot = () => {
                         ))}
                     </div>
                     <div className="input-container">
-                        <button className="send-button" onClick={handleUserMessage}>
+                        <input type="text" placeholder="Type your message..." onKeyDown={handleUserMessage} aria-label="Type your message here" />
+                        <button className="send-button" onClick={handleUserMessage} aria-label="Send message">
                             <FontAwesomeIcon icon={faPaperPlane} />
                         </button>
-                        <input type="text" placeholder="Type your message..." onKeyDown={handleUserMessage} />
                     </div>
                 </div>
             )}
