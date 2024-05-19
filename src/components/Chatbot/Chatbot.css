@@ -1,4 +1,4 @@
-/*Chatbot component styles go here*/
+/* Chatbot component styles */
 
 .chatbot {
     position: fixed;
@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: column;
     z-index: 1000;
-    background-color: #fff; /* Ensure the background is set */
+    background-color: #ffffff; /* Ensure the background is set */
     transition: max-height 0.3s ease-in-out; /* Smooth opening effect */
 }
 
@@ -45,6 +45,7 @@
     padding: 10px;
     border-top: 1px solid #ddd;
     overflow-y: auto; /* Allow scrolling for the body */
+    padding-bottom: 60px; /* Add space for the input container */
 }
 
 .messages {
@@ -63,11 +64,11 @@
 .message.bot {
     background-color: #f1f1f1;
     align-self: flex-start;
-    opacity: 0.8; /* Adjust the opacity value as needed */
+    opacity: 1.0; /* Adjust the opacity value as needed */
 }
 
 .message.user {
-    background-color: #6cadee;
+    background-color: #007bff;
     color: #fff;
     align-self: flex-end;
     opacity: 0.7; /* Adjust the opacity value as needed */
@@ -75,9 +76,14 @@
 
 .input-container {
     display: flex;
+    align-items: center;
     border-top: 1px solid #ddd;
-    padding-top: 5px;
+    padding: 5px 10px;
     background-color: #fff; /* Ensure the input container background is set */
+    position: fixed;
+    bottom: 20px;
+    right: 70px; /* Adjust to ensure it's not under the icon */
+    width: calc(100% - 170px); /* Width minus the icon size, send button size, and some padding */
 }
 
 .chatbot input[type="text"] {
@@ -85,40 +91,64 @@
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 5px 10px;
-    margin-right: 5px; /* Adjust this value to move the send button left or right */
-    box-sizing: border-box;
+    margin-right: 5px; /* Adjust this value as needed */
 }
 
 .send-button {
     background-color: #007bff;
-    color: white;
+    border: none;
+    color: #fff;
+    padding: 5px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px; /* Add space between the send button and the input field */
+}
+
+
+.quick-replies {
+    display: flex;
+    flex-wrap: wrap; /* Allow the buttons to wrap */
+    gap: 5px; /* Space between buttons */
+    margin-bottom: 10px; /* Space below the quick replies */
+}
+
+.quick-reply-button {
+    background-color: #007bff;
     border: none;
     border-radius: 5px;
     padding: 5px 10px;
+    color: white;
     cursor: pointer;
-    z-index: 1002; /* Ensure it appears above other elements */
+    flex: 1; /* Allow buttons to grow and fill the space */
+    margin: 5px 0; /* Space around the buttons */
+    max-width: 45%; /* Ensure buttons don't get too wide */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
 }
 
-.send-button:hover {
-    background-color: #0056b3;
+.quick-reply-button:hover {
+    background-color: #0056b3; /* Darker blue for hover effect */
 }
 
-.send-button svg {
-    display: block; /* Ensures the icon takes up the entire button */
+/* For small devices (e.g., smartphones) */
+@media only screen and (max-width: 575px) {
+    .input-container {
+        width: 80%; /* Adjusted width for small screens */
+         /* Adjusted right position */
+    }
 }
 
-/* Ensures the chatbot and the chatbot icon do not overlap */
-.chatbot {
-    bottom: 80px; /* Position the chatbot above the icon */
+/* For medium devices (e.g., tablets) */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .input-container {
+        width: calc(100% - 140px); /* Adjusted width for medium screens */
+        right: 60px; /* Adjusted right position */
+    }
 }
 
-.background-image {
-    position: absolute;
-    top: 20%; /* Adjust this value to position the image higher */
-    left: 30%;
-    transform: translate(-50%, -50%);
-    width: 90%; /* Adjust the width as needed */
-    height: 90%; /* Adjust the height as needed */
-    background-size: cover;
-    opacity: 0.4; /* Adjust the opacity value as needed */
+/* For large devices (e.g., desktops) */
+@media only screen and (min-width: 768px) {
+    .input-container {
+        width:26%; /* Adjusted width for large screens */
+         /* Adjusted right position */
+    }
 }
