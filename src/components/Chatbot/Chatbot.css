@@ -1,15 +1,23 @@
+/*Chatbot component styles go here*/
+
 .chatbot {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 300px;
-    max-height: 400px;
+    width: 400px;
+    max-height: 50px; /* Initial height when closed */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     z-index: 1000;
+    background-color: #fff; /* Ensure the background is set */
+    transition: max-height 0.3s ease-in-out; /* Smooth opening effect */
+}
+
+.chatbot.open {
+    max-height: 500px; /* Height when opened */
 }
 
 .chatbot-icon {
@@ -27,21 +35,23 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
+    z-index: 1001; /* Ensure it appears above the chatbot */
 }
 
 .chatbot-body {
-    background-color: #fff;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     padding: 10px;
     border-top: 1px solid #ddd;
+    overflow-y: auto; /* Allow scrolling for the body */
 }
 
 .messages {
     flex-grow: 1;
     overflow-y: auto;
     margin-bottom: 10px;
+    max-height: 300px; /* Adjust to fit within the chatbot */
 }
 
 .message {
@@ -53,18 +63,21 @@
 .message.bot {
     background-color: #f1f1f1;
     align-self: flex-start;
+    opacity: 0.8; /* Adjust the opacity value as needed */
 }
 
 .message.user {
-    background-color: #007bff;
+    background-color: #6cadee;
     color: #fff;
     align-self: flex-end;
+    opacity: 0.7; /* Adjust the opacity value as needed */
 }
 
 .input-container {
     display: flex;
     border-top: 1px solid #ddd;
     padding-top: 5px;
+    background-color: #fff; /* Ensure the input container background is set */
 }
 
 .chatbot input[type="text"] {
@@ -83,6 +96,7 @@
     border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;
+    z-index: 1002; /* Ensure it appears above other elements */
 }
 
 .send-button:hover {
@@ -91,4 +105,20 @@
 
 .send-button svg {
     display: block; /* Ensures the icon takes up the entire button */
+}
+
+/* Ensures the chatbot and the chatbot icon do not overlap */
+.chatbot {
+    bottom: 80px; /* Position the chatbot above the icon */
+}
+
+.background-image {
+    position: absolute;
+    top: 20%; /* Adjust this value to position the image higher */
+    left: 30%;
+    transform: translate(-50%, -50%);
+    width: 90%; /* Adjust the width as needed */
+    height: 90%; /* Adjust the height as needed */
+    background-size: cover;
+    opacity: 0.4; /* Adjust the opacity value as needed */
 }
