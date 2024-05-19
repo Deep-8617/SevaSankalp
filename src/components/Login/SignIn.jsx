@@ -72,15 +72,15 @@ const SignIn = ({ handleResponse }) => {
                             <Toast.Header>
                                 <strong className="mr-auto">Demo credential</strong>
                             </Toast.Header>
-                            <Toast.Body>Use this account to sign in as a doctor <br />
+                            <Toast.Body>Enter details to signin as a doctor & patient<br />
                                 <hr />
                                 <div className='bg-dark text-white p-2 px-3 rounded'>
-                                    email : doctor@gmail.com <br />
-                                    password : 123456 <br />
+                                    email : Your@gmail.com <br />
+                                    password : Your password <br />
                                 </div>
                                 <hr />
                                 <div className='bg-primary p-2 rounded text-white'>
-                                    Please do not abuse the facility
+                                    Login with your proper credentials.
                                 </div>
                             </Toast.Body>
                         </Toast>
@@ -100,7 +100,7 @@ const SignIn = ({ handleResponse }) => {
                         <button className="iBtn" type="submit" value="sign In" >
                             {isLoading ? <Spinner animation="border" variant="info" /> : "Sign In"}
                         </button>
-                        <p className="social-text">Or Sign in with social platforms</p>
+                        
                         <SocialSignUp handleResponse={handleResponse} />
                     </form>
             }

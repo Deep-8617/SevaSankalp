@@ -202,7 +202,7 @@ const SignUp = ({ setSignUp }) => {
                 </div>
             </div>
 
-            <p className="social-text">Or Sign up with social account</p>
+            
             <SocialSignUp />
         </form>
 
