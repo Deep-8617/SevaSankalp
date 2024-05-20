@@ -1,276 +1,268 @@
 /* Chatbot component styles */
 
 .chatbot {
-
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 300px; /* Initial width for smaller screens */
-    max-height: 50px; /* Initial height when closed */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    z-index: 1000;
-    background-color: #ffffff; /* Ensure the background is set */
-    transition: max-height 0.3s ease-in-out; /* Smooth opening effect */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px; /* Initial width for smaller screens */
+  max-height: 50px; /* Initial height when closed */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  background-color: #ffffff; /* Ensure the background is set */
+  transition: max-height 0.3s ease-in-out; /* Smooth opening effect */
 }
 
 .chatbot.open {
-    max-height: 500px; /* Height when opened */
+  max-height: 500px; /* Height when opened */
 }
 
 .chatbot-icon {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px;
-    cursor: pointer;
-    text-align: center;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1001; /* Ensure it appears above the chatbot */
-    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1001; /* Ensure it appears above the chatbot */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
 }
 
 .chatbot-icon:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
 .chatbot-body {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    border-top: 1px solid #ddd;
-    overflow-y: auto; /* Allow scrolling for the body */
-    padding-bottom: 60px; /* Add space for the input container */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  overflow-y: auto; /* Allow scrolling for the body */
+  padding-bottom: 60px; /* Add space for the input container */
 }
 
 .chatbot-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-    border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
 }
 
 .close-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #007bff;
-    font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+  font-size: 1.5rem;
 }
 
 .messages {
-    flex-grow: 1;
-    overflow-y: auto;
-    margin-bottom: 10px;
-    max-height: 300px; /* Adjust to fit within the chatbot */
-    padding-right: 10px; /* Add padding for smooth scrolling */
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  max-height: 300px; /* Adjust to fit within the chatbot */
+  padding-right: 10px; /* Add padding for smooth scrolling */
 }
 
 .message {
-    padding: 5px 10px;
-    margin: 5px 0;
-    border-radius: 5px;
+  padding: 5px 10px;
+  margin: 5px 0;
+  border-radius: 5px;
 }
 
 .message.bot {
-    background-color: #f1f1f1;
-    align-self: flex-start;
-    opacity: 1.0; /* Adjust the opacity value as needed */
-    animation: fadeIn 0.3s ease-in-out; /* Fade-in animation for bot messages */
+  background-color: #f1f1f1;
+  align-self: flex-start;
+  opacity: 1; /* Adjust the opacity value as needed */
+  animation: fadeIn 0.3s ease-in-out; /* Fade-in animation for bot messages */
 }
 
 .message.user {
-    background-color: #007bff;
-    color: #fff;
-    align-self: flex-end;
-    opacity: 0.7; /* Adjust the opacity value as needed */
-    animation: fadeIn 0.3s ease-in-out; /* Fade-in animation for user messages */
+  background-color: #007bff;
+  color: #fff;
+  align-self: flex-end;
+  opacity: 0.7; /* Adjust the opacity value as needed */
+  animation: fadeIn 0.3s ease-in-out; /* Fade-in animation for user messages */
 }
 
 .input-container {
-    display: flex;
-    align-items: center;
-    border-top: 1px solid #ddd;
-    padding: 5px 10px;
-    background-color: #fff; /* Ensure the input container background is set */
-    position: fixed;
-    bottom: 20px;
-    right: 20px; /* Adjust to ensure it's not under the icon */
-    width: calc(100% - 70px); /* Width minus the icon size and some padding */
-    max-width: 350px; /* Maximum width to prevent it from getting too wide */
-    z-index: 1001; /* Ensure it appears above the chatbot */
-    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  padding: 5px 10px;
+  background-color: #fff; /* Ensure the input container background is set */
+  position: fixed;
+  bottom: 20px;
+  right: 20px; /* Adjust to ensure it's not under the icon */
+  width: calc(100% - 70px); /* Width minus the icon size and some padding */
+  max-width: 350px; /* Maximum width to prevent it from getting too wide */
+  z-index: 1001; /* Ensure it appears above the chatbot */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
 }
 
 .input-container:hover {
-    transform: scale(1.02); /* Slightly enlarge on hover */
+  transform: scale(1.02); /* Slightly enlarge on hover */
 }
 
 .chatbot input[type="text"] {
-    flex-grow: 1;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 5px 10px;
-    margin-right: 5px; /* Adjust this value as needed */
-    transition: border-color 0.3s ease-in-out; /* Smooth transition for focus effect */
+  flex-grow: 1;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  transition: border-color 0.3s ease-in-out; /* Smooth transition for focus effect */
 }
 
 .chatbot input[type="text"]:focus {
-    border-color: #007bff; /* Change border color on focus */
-    outline: none; /* Remove default outline */
+  border-color: #007bff; /* Change border color on focus */
+  outline: none; /* Remove default outline */
 }
 
 .send-button {
-    background-color: #007bff;
-    border: none;
-    color: #fff;
-    padding: 5px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 5px; /* Space between the send button and the input field */
-    transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 5px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 5px; /* Space between the send button and the input field */
+  transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
 }
 
 .send-button:hover {
-    background-color: #0056b3; /* Darker blue for hover effect */
+  background-color: #0056b3; /* Darker blue for hover effect */
 }
 
 .quick-replies {
-    display: flex;
-    flex-wrap: wrap; /* Allow the buttons to wrap */
-    gap: 5px; /* Space between buttons */
-    margin-bottom: 10px; /* Space below the quick replies */
+  display: flex;
+  flex-wrap: wrap; /* Allow the buttons to wrap */
+  gap: 5px; /* Space between buttons */
+  margin-bottom: 10px; /* Space below the quick replies */
 }
 
 .quick-reply-button {
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    color: white;
-    cursor: pointer;
-    flex: 1; /* Allow buttons to grow and fill the space */
-    margin: 5px 0; /* Space around the buttons */
-    max-width: 45%; /* Ensure buttons don't get too wide */
-    transition: background-color 0.3s ease; /* Smooth background color transition */
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+  flex: 1; /* Allow buttons to grow and fill the space */
+  margin: 5px 0; /* Space around the buttons */
+  max-width: 45%; /* Ensure buttons don't get too wide */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
 }
 
 .quick-reply-button:hover {
-    background-color: #0056b3; /* Darker blue for hover effect */
+  background-color: #0056b3; /* Darker blue for hover effect */
 }
 
 /* Responsive Design for Different Screen Sizes */
 
 /* For very small screens (e.g., mobile phones) */
 @media only screen and (max-width: 400px) {
-    .chatbot {
-        width: 90%; /* Adjust width for smaller screens */
-        bottom: 10px;
-        right: 5%;
-    }
+  .chatbot {
+    width: 90%; /* Adjust width for smaller screens */
+    bottom: 10px;
+    right: 5%;
+  }
 
-    .chatbot-icon {
-        right: 10px;
-    }
+  .chatbot-icon {
+    right: 10px;
+  }
 
-    .input-container {
-        width: calc(100% - 100px); /* Adjusted width for small screens */
-        right: 10px;
-        bottom: 10px;
-        display: flex; /* Use flexbox for input container */
-        align-items: center; /* Center items vertically */
-    }
+  .input-container {
+    padding-left: 0;
+    margin-left: 0;
+    right: inherit;
+  }
 
-    .chatbot input[type="text"] {
-        flex-grow: 1; /* Grow to fill remaining space */
-        border-radius: 5px;
-        padding: 5px 10px;
-        margin-right: 5px; /* Adjust margin */
-    }
+  .input-container input {
+    margin-right: 0;
+  }
 
-    .send-button {
-        width: 80px; /* Adjusted width for the send button */
-        border-radius: 5px;
-        padding: 5px 10px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
+  .send-button {
+    width: 80px; /* Adjusted width for the send button */
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 }
-
-
 
 /* For medium devices (e.g., tablets) */
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-    .chatbot {
-        width: 90%; /* Adjusted width for medium screens */
-        bottom: 15px;
-        right: 5%;
-    }
+  .chatbot {
+    width: 90%; /* Adjusted width for medium screens */
+    bottom: 15px;
+    right: 5%;
+  }
 
-    .input-container {
-        width: calc(100% - 70px); /* Adjusted width for medium screens */
-        right: 15px;
-        bottom: 15px;
-    }
+  .input-container {
+    width: calc(100% - 70px); /* Adjusted width for medium screens */
+    right: 0;
+    bottom: 15px;
+  }
 }
 
 /* For large devices (e.g., desktops) */
 @media only screen and (min-width: 768px) {
-    .chatbot {
-        width: 350px; /* Default width for large screens */
-    }
+  .chatbot {
+    width: 350px; /* Default width for large screens */
+  }
 
-    .input-container {
-        width: calc(100% - 70px); /* Adjusted width for large screens */
-        right: 20px;
-        bottom: 20px;
-    }
+  .input-container {
+    width: calc(100% - 70px); /* Adjusted width for large screens */
+    right: 20px;
+    bottom: 20px;
+  }
 }
 
 /* Add smooth scroll for messages */
 .messages::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 
 .messages::-webkit-scrollbar-thumb {
-    background-color: #007bff;
-    border-radius: 5px;
+  background-color: #007bff;
+  border-radius: 5px;
 }
 
 /* Animation for fade-in effect */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 /*clear button*/
 .clear-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #007bff;
-    font-size: 1.5rem;
-    margin-left: 10px; /* Add some space between the close and clear buttons */
-    transition: color 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+  font-size: 1.5rem;
+  margin-left: 10px; /* Add some space between the close and clear buttons */
+  transition: color 0.3s ease;
 }
 
 .clear-button:hover {
-    color: #0056b3;
+  color: #0056b3;
 }

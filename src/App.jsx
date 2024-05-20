@@ -116,8 +116,8 @@ function App() {
           <Route path="/admin/patients" element={<Patients />} />
           <Route path="/admin/profile" element={<Profile />} />
           <Route path="/admin/reviews" element={<AdminReviews />} />
-          <Route path="/admin/transaction" element={<Transactions />} />
-          <Route path="/admin/specialites" element={<Specialites />} />
+          {/* <Route path="/admin/transaction" element={<Transactions />} /> */}
+          {/* <Route path="/admin/specialites" element={<Specialites />} /> */}
         </Route>
 
         <Route path="*" element={<NotFound />} />
