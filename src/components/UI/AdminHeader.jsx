@@ -28,13 +28,6 @@ const AdminHeader = () => {
             </a>
             <ul className="nav user-menu">
 
-                <li className="nav-item dropdown noti-dropdown">
-                    <a href="#" className="dropdown-toggle nav-link" data-toggle="dropdown">
-                        <i className="fe fe-bell"></i> <span className="badge badge-pill">3</span>
-                    </a>
-                    <div className="dropdown-menu notifications">
-                    </div>
-                </li>
                 <li className="nav-item dropdown has-arrow">
                     <a href="#" className="dropdown-toggle nav-link" data-toggle="dropdown">
                         <span className="user-img"><img className="rounded-circle" src={userImg} width="31" alt="Ryan Taylor" /></span>
