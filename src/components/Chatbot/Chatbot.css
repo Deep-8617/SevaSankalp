@@ -4,7 +4,7 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 400px;
+    width: 300px; /* Initial width for smaller screens */
     max-height: 50px; /* Initial height when closed */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -36,6 +36,11 @@
     bottom: 20px;
     right: 20px;
     z-index: 1001; /* Ensure it appears above the chatbot */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.chatbot-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
 .chatbot-body {
@@ -68,6 +73,7 @@
     overflow-y: auto;
     margin-bottom: 10px;
     max-height: 300px; /* Adjust to fit within the chatbot */
+    padding-right: 10px; /* Add padding for smooth scrolling */
 }
 
 .message {
@@ -80,6 +86,7 @@
     background-color: #f1f1f1;
     align-self: flex-start;
     opacity: 1.0; /* Adjust the opacity value as needed */
+    animation: fadeIn 0.3s ease-in-out; /* Fade-in animation for bot messages */
 }
 
 .message.user {
@@ -87,6 +94,7 @@
     color: #fff;
     align-self: flex-end;
     opacity: 0.7; /* Adjust the opacity value as needed */
+    animation: fadeIn 0.3s ease-in-out; /* Fade-in animation for user messages */
 }
 
 .input-container {
@@ -99,8 +107,13 @@
     bottom: 20px;
     right: 20px; /* Adjust to ensure it's not under the icon */
     width: calc(100% - 70px); /* Width minus the icon size and some padding */
-    max-width: 400px; /* Maximum width to prevent it from getting too wide */
+    max-width: 350px; /* Maximum width to prevent it from getting too wide */
     z-index: 1001; /* Ensure it appears above the chatbot */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.input-container:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
 }
 
 .chatbot input[type="text"] {
@@ -109,6 +122,12 @@
     border-radius: 5px;
     padding: 5px 10px;
     margin-right: 5px; /* Adjust this value as needed */
+    transition: border-color 0.3s ease-in-out; /* Smooth transition for focus effect */
+}
+
+.chatbot input[type="text"]:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
 }
 
 .send-button {
@@ -119,6 +138,11 @@
     border-radius: 5px;
     cursor: pointer;
     margin-left: 5px; /* Space between the send button and the input field */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.send-button:hover {
+    background-color: #0056b3; /* Darker blue for hover effect */
 }
 
 .quick-replies {
@@ -145,8 +169,29 @@
     background-color: #0056b3; /* Darker blue for hover effect */
 }
 
+/* Responsive Design for Different Screen Sizes */
+
+/* For very small screens (e.g., mobile phones) */
+@media only screen and (max-width: 400px) {
+    .chatbot {
+        width: 90%; /* Adjust width for smaller screens */
+        bottom: 10px;
+        right: 5%;
+    }
+
+    .chatbot-icon {
+        right: 10px;
+    }
+
+    .input-container {
+        width: calc(100% - 70px); /* Adjusted width for small screens */
+        right: 10px;
+        bottom: 10px;
+    }
+}
+
 /* For small devices (e.g., smartphones) */
-@media only screen and (max-width: 575px) {
+@media only screen and (min-width: 400px) and (max-width: 575px) {
     .chatbot {
         width: 90%; /* Adjusted width for small screens */
         bottom: 10px;
@@ -178,12 +223,32 @@
 /* For large devices (e.g., desktops) */
 @media only screen and (min-width: 768px) {
     .chatbot {
-        width: 400px; /* Default width for large screens */
+        width: 350px; /* Default width for large screens */
     }
 
     .input-container {
         width: calc(100% - 70px); /* Adjusted width for large screens */
         right: 20px;
         bottom: 20px;
+    }
+}
+
+/* Add smooth scroll for messages */
+.messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 5px;
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
