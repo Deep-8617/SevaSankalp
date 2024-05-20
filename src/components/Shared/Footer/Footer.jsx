@@ -45,6 +45,7 @@ const Footer = () => {
 									<li><Link to={'/login'}><FaAngleDoubleRight className='icon' /> Login</Link></li>
 									<li><Link to={'/register'}><FaAngleDoubleRight className='icon' /> Register</Link></li>
 									<li><Link to={'/dashboard'}><FaAngleDoubleRight className='icon' /> Doctor Dashboard</Link></li>
+									<li><Link to={'/admin/login'}><FaAngleDoubleRight className='icon' /> Admin</Link></li>
 								</ul>
 							</div>
 						</div>

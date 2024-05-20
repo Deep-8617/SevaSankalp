@@ -85,7 +85,7 @@ const SearchDoctor = () => {
     <div>
       <Header />
       {/* Change line below */}
-      <SubHeader title="Doctors" subtitle="Lorem ipsum dolor sit amet." />
+      <SubHeader title="Doctors" subtitle="Meet Our Group of Specialist Doctors." />
       <div className="container" style={{ marginBottom: 200, marginTop: 80 }}>
         <div className="container-fluid">
           <div className="row">
