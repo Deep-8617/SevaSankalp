@@ -12,6 +12,7 @@ const Chatbot = () => {
 
     const predefinedQA = {
         'hi': 'how can i assist you?',
+        'hello': 'how can i assist you?',
         'what is your name?': 'I am SevaBot',
         'what are your working hours': 'Our working hours are 9 AM to 5 PM, Monday to Friday.',
         'where is your clinic located': 'We are located at 123 Main Street, Springfield.',

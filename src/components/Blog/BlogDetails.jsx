@@ -44,14 +44,7 @@ const BlogDetails = () => {
                     <p className="text-secondary text-start">{data?.description}</p>
                 </div>
             </div>
-            <div className="d-flex gap-2 ms-2 px-2 py-3">
-                <span className="">Tags:</span>
-                <div className="d-flex gap-2">
-                    {
-                        Array(4).fill(null).map((_item, index) => (<h5 key={index + 2}>#tag{index}</h5>))
-                    }
-                </div>
-            </div>
+            
         </div>
     return (
         <>
@@ -64,7 +57,7 @@ const BlogDetails = () => {
                             content
                         }
                         <hr />
-                        <div className="d-flex justify-content-end">
+                        <div className="d-flex justify-content-end" style={{ backgroundColor: '#fffdd0' }}> 
                             <div className="col-md-5 col-lg-4 ml-lg-0 text-end text-md-end">
                                 <h5 className="text-dark rounded d-inline me-2">Share On </h5>
                                 <a className="btn btn-outline-primary btn-floating m-1" >

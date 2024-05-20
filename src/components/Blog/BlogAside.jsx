@@ -76,17 +76,7 @@ const BlogAside = ({ setSearchTerm }) => {
                 {content}
             </div>
 
-            <div className="mb-4">
-                <h5 className="mb-3" style={{ fontWeight: '900' }}>TAGS</h5>
-                <div className="d-flex flex-wrap gap-3">
-                    {
-                        Array(6).fill(null).map((_item, index) => (
-                            <button key={index + 2} className="btn text-black px-3 py-1 btn-sm" style={{ background: '#e5e5e5' }}>{'tags' + index}</button>
-
-                        ))
-                    }
-                </div>
-            </div>
+            
         </div>
     )
 }
