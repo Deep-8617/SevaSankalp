@@ -1,20 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComments, faPaperPlane, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faComments, faPaperPlane, faTimes, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import stringSimilarity from 'string-similarity';
 import './Chatbot.css';
 
 const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [messages, setMessages] = useState([
-        { from: 'bot', text: 'Welcome to SevaSankalp! I am your SevaBot, How can I assist you today?' }
-    ]);
+    const initialMessage = { from: 'bot', text: 'Welcome to SevaSankalp! I am your SevaBot, How can I assist you today?' };
+    const [messages, setMessages] = useState([initialMessage]);
     const messagesEndRef = useRef(null);
 
     const predefinedQA = {
+        'hi': 'how can i assist you?',
+        'what is your name?': 'I am SevaBot',
         'what are your working hours': 'Our working hours are 9 AM to 5 PM, Monday to Friday.',
         'where is your clinic located': 'We are located at 123 Main Street, Springfield.',
         'what services do you offer': 'We offer general checkups, dental care, pediatric care, and more.',
-        'how can i book an appointment': 'You can book an appointment by calling us at (123) 456-7890 or via our website.',
+        'how can i book an appointment': 'You can book an appointment by calling us at +91 8240607515 or via our website.',
         'do you offer emergency services': 'Yes, we have emergency services available 24/7.',
         'what insurance do you accept': 'We accept a variety of insurances including Aetna, Blue Cross Blue Shield, and Cigna.',
         'how can i get my medical records': 'You can request your medical records by contacting our front desk.',
@@ -30,7 +32,7 @@ const Chatbot = () => {
         'can you help with mental health issues': 'Yes, we have mental health professionals on staff to assist with various mental health concerns.',
         'do you offer diet and nutrition advice': 'Yes, our dietitians can provide personalized diet and nutrition advice.',
         'what should i do in case of a medical emergency': 'In case of a medical emergency, please call 911 or go to the nearest emergency room.',
-        'do you have specialists available': 'Yes, we have a range of specialists including cardiologists, dermatologists, and orthopedic surgeons.',
+        'do you have specialists available': 'Yes, we have a range of specialists including cardiologists, dermatologists, and orthopedic surgeons.'
     };
 
     const quickReplies = [
@@ -43,6 +45,10 @@ const Chatbot = () => {
 
     const handleToggle = () => {
         setIsOpen(!isOpen);
+    };
+
+    const handleClearChat = () => {
+        setMessages([initialMessage]);
     };
 
     const handleUserMessage = (event) => {
@@ -68,12 +74,10 @@ const Chatbot = () => {
 
         let botResponse = 'Sorry, I do not understand.';
         const messageKeys = Object.keys(predefinedQA);
-        for (const key of messageKeys) {
-            const regex = new RegExp(`\\b${key}\\b`, 'i');
-            if (regex.test(userMessage)) {
-                botResponse = predefinedQA[key];
-                break;
-            }
+
+        const matches = stringSimilarity.findBestMatch(userMessage, messageKeys);
+        if (matches.bestMatch.rating > 0.4) {
+            botResponse = predefinedQA[matches.bestMatch.target];
         }
 
         setMessages((prevMessages) => [
@@ -100,6 +104,9 @@ const Chatbot = () => {
                     <div className="chatbot-header">
                         <button className="close-button" onClick={handleToggle} aria-label="Close chatbot">
                             <FontAwesomeIcon icon={faTimes} />
+                        </button>
+                        <button className="clear-button" onClick={handleClearChat} aria-label="Clear chat">
+                            <FontAwesomeIcon icon={faTrashAlt} />
                         </button>
                     </div>
                     <div className="messages">

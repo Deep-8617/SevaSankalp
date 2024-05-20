@@ -1,6 +1,7 @@
 /* Chatbot component styles */
 
 .chatbot {
+
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -55,7 +56,7 @@
 
 .chatbot-header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: 5px;
     border-bottom: 1px solid #ddd;
 }
@@ -184,26 +185,33 @@
     }
 
     .input-container {
-        width: calc(100% - 70px); /* Adjusted width for small screens */
+        width: calc(100% - 100px); /* Adjusted width for small screens */
         right: 10px;
         bottom: 10px;
+        display: flex; /* Use flexbox for input container */
+        align-items: center; /* Center items vertically */
+    }
+
+    .chatbot input[type="text"] {
+        flex-grow: 1; /* Grow to fill remaining space */
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin-right: 5px; /* Adjust margin */
+    }
+
+    .send-button {
+        width: 80px; /* Adjusted width for the send button */
+        border-radius: 5px;
+        padding: 5px 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
     }
 }
 
-/* For small devices (e.g., smartphones) */
-@media only screen and (min-width: 400px) and (max-width: 575px) {
-    .chatbot {
-        width: 90%; /* Adjusted width for small screens */
-        bottom: 10px;
-        right: 5%;
-    }
 
-    .input-container {
-        width: calc(100% - 70px); /* Adjusted width for small screens */
-        right: 10px;
-        bottom: 10px;
-    }
-}
 
 /* For medium devices (e.g., tablets) */
 @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -251,4 +259,18 @@
     to {
         opacity: 1;
     }
+}
+/*clear button*/
+.clear-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #007bff;
+    font-size: 1.5rem;
+    margin-left: 10px; /* Add some space between the close and clear buttons */
+    transition: color 0.3s ease;
+}
+
+.clear-button:hover {
+    color: #0056b3;
 }
