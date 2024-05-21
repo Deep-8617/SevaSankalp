@@ -16,6 +16,7 @@ const DoctorInvoice = () => {
             key: '1',
             width: 150,
             render: function (data) {
+
                 return (
                     <div className="table-avatar">
                         <a className="avatar avatar-sm mr-2 d-flex gap-2">

@@ -47,7 +47,7 @@ const PatientFavouriteDoctor = () => {
                                 </Link>
                                 <FaCheckCircle className='verified text-success' />
                             </h5>
-                            <p className="form-text">MBBS, MD - General Medicine, DNB - Cardiology</p>
+                            <p className="form-text">{item?.doctor?.specialization}-{item?.doctor?.degree}</p>
                             <div className="w-100 d-flex align-items-center">
                                 <StarRatings
                                     rating={5}
@@ -72,7 +72,7 @@ const PatientFavouriteDoctor = () => {
                                 </li>
                             </ul>
                             <div className="d-flex justify-content-between mb-3 mt-2">
-                                <Link to={'/doctors/profile'} className="btn  btn-outline-info" style={{ borderColor: '#1977cc', color: '#1977cc' }}>Profile</Link>
+                                <Link to={`/doctors/profile/${item?.doctor?.id}`} className="btn  btn-outline-info" style={{ borderColor: '#1977cc', color: '#1977cc' }}>Profile</Link>
                                 <Link to={`/booking/${item?.doctor?.id}`} className="btn book-btn" style={{ backgroundColor: '#1977cc' }}>Book Now</Link>
                             </div>
                         </div>

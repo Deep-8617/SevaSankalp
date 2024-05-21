@@ -18,7 +18,7 @@ const MyPatients = () => {
                 <div className="w-100 mb-3 rounded p-3 text-center" style={{ background: '#f8f9fa' }}>
                     <div className="">
                         <Link to={'/'} className="my-3 patient-img">
-                            <img src={img} alt="" />
+                            <img src={item?.img} alt="" />
                         </Link>
                         <div className="patients-info mt-4">
                             <h5>{item?.firstName + ' ' + item?.lastName}</h5>
