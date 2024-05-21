@@ -58,7 +58,7 @@ const BookDoctor = () => {
 									</Link>
 									<FaCheckCircle className='verified' />
 								</h3>
-								<p className="speciality">{item?.designation}, {item?.specialization}</p>
+								<p className="speciality">{item?.specialization}</p>
 								<div className="w-100 d-flex align-items-center">
 									<StarRatings
 										rating={5}
@@ -69,17 +69,17 @@ const BookDoctor = () => {
 										starDimension="20px"
 										starSpacing="5px"
 									/>
-									<span className="d-inline-block text-secondary mt-2">(27)</span>
+									<span className="d-inline-block text-secondary mt-2"></span>
 								</div>
 								<ul className="available-info">
 									<li>
-										<FaLocationArrow className='icon' /> Georgia, USA
+										<FaLocationArrow className='icon' />{item?.address}
 									</li>
 									<li>
-										<FaClock className='icon' /> Available on Fri, 22 Mar
+										<FaClock className='icon' /> {item?.clinicAddress}
 									</li>
 									<li>
-										<FaDollarSign className='icon' /> $100 - $400
+										<FaDollarSign className='icon' />{item?.price}
 									</li>
 								</ul>
 								<div className="d-flex justify-content-between align-items-center">
