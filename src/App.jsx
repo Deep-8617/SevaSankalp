@@ -44,6 +44,7 @@ import PrivateOutlet from "./components/Shared/PrivateOutlet";
 import NotFound from "./components/UI/NotFound";
 import { AdminProtectedRoute } from "./utils/AdminAuth";
 import AdminLogin from "./components/Admin/Login";
+import AdminLogout from "./components/Admin/Logout";
 
 function App() {
   return (
@@ -110,6 +111,7 @@ function App() {
         {/* Admin Dashboard  */}
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route element={<AdminProtectedRoute />}>
+          <Route path="/admin/logout" element={<AdminLogout />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/appointments" element={<AdminAppointments />} />
           <Route path="/admin/doctors" element={<Doctors />} />
