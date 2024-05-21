@@ -87,7 +87,7 @@ const Chatbot = () => {
             { from: 'user', text: userMessage }
         ]);
 
-        let botResponse = 'Sorry, I do not understand.';
+        let botResponse = 'Sorry, I am not programmed to answer that. Please ask a different question.';
         const messageKeys = Object.keys(predefinedQA);
 
         const matches = stringSimilarity.findBestMatch(userMessage, messageKeys);
