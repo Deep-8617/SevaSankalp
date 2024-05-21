@@ -48,16 +48,11 @@ const Chatbot = () => {
         'how can I prevent a stroke?': 'To prevent a stroke, you can maintain a healthy lifestyle by eating a balanced diet, exercising regularly, maintaining a healthy weight, not smoking, limiting alcohol consumption, and managing underlying health conditions such as high blood pressure, diabetes, and high cholesterol. Additionally, consult with your healthcare provider for personalized stroke prevention strategies.',
         'what are the symptoms of depression?': 'Symptoms of depression may include persistent sadness, feelings of hopelessness or emptiness, loss of interest or pleasure in activities once enjoyed, changes in appetite or weight, difficulty sleeping or oversleeping, fatigue, feelings of worthlessness or guilt, difficulty concentrating or making decisions, and thoughts of death or suicide. If you or someone you know experiences these symptoms, seek help from a healthcare professional.',
         'how can I support someone with depression?': 'To support someone with depression, you can listen to them without judgment, offer emotional support, encourage them to seek professional help, help them maintain a healthy lifestyle, and be patient and understanding. Additionally, educate yourself about depression and available treatment options.',
-        'who created you?': 'SevaSankalp Innovative Developers Team  Created me.',
-        'book': 'Choose your desired doctor as per your disease in the doctor section, otherwise go to our contact option and contact us here is the link - "http://localhost:3000/contact"',
-        'books': 'Choose your desired doctor as per your disease in the doctor section, otherwise go to our contact option and contact us here is the link - "http://localhost:3000/contact"',
-        'bokking': 'Choose your desired doctor as per your disease in the doctor section, otherwise go to our contact option and contact us here is the link - "http://localhost:3000/contact"',
-        'how to book': 'Choose your desired doctor as per your disease in the doctor section, otherwise go to our contact option and contact us here is the link - "http://localhost:3000/contact"',
-        'what are the doctor\'s timings': 'Please visit our doctor section for details or contact us here is the link -(http://localhost:3000/contact)',
-        'doctor timings': 'Please visit our doctor section for details or contact us here is the link -(http://localhost:3000/contact)',
-        'doctor availability': 'Please visit our doctor section for details or contact us here is the link -(http://localhost:3000/contact)',
-        'what time is the doctor available': 'Please visit our doctor section for details or contact us here is the link -(http://localhost:3000/contact)',
-        'time': 'Please visit our doctor section for details or contact us here is the link -(http://localhost:3000/contact)',
+        'doctors': 'Please visit our doctor section for details or contact us.',
+        'doctor timings': 'Please visit our doctor section for details or contact us.',
+        'doctor availability': 'Please visit our doctor section for details or contact us.',
+        'what time is the doctor available': 'Please visit our doctor section for details or contact us.',
+        'time': 'Please visit our doctor section for details or contact us.',
         'why sevasankalp?': 'SevaSankalp is dedicated to providing top-quality healthcare with a compassionate touch. Our team of experienced professionals is here to support your health and well-being.',
         'rating': 'Doctor ratings vary based on patient feedback and specialty. Please visit the doctor section on our website for detailed ratings and reviews.',
         'approx booking rate': 'Our doctor booking prices vary depending on the doctor. Please visit the doctor section on our website for specific rates.',
@@ -66,7 +61,37 @@ const Chatbot = () => {
         'how much does it cost to book a doctor?': 'The cost to book a doctor varies. Please visit the doctor section on our website for detailed pricing information.',
         'doctor cost': 'The cost to book a doctor varies. Please visit the doctor section on our website for detailed pricing information.',
         'how much is an appointment?': 'The cost of an appointment varies. Please visit the doctor section on our website for detailed pricing information.',
+        'why sevasankalp?': 'SevaSankalp is dedicated to providing top-quality healthcare with a compassionate touch. Our team of experienced professionals is here to support your health and well-being.',
+        'rating': 'Doctor ratings vary based on patient feedback and specialty. Please visit the doctor section on our website for detailed ratings and reviews.',
+        'approx booking rate': 'Our doctor booking prices vary depending on the doctor. Please visit the doctor section on our website for specific rates.',
+        'booking rate': 'Our doctor booking prices vary depending on the doctor. Please visit the doctor section on our website for specific rates.',
+        'price': 'Our doctor booking prices vary depending on the doctor. Please visit the doctor section on our website for specific rates.',
+        'how much does it cost to book a doctor?': 'The cost to book a doctor varies. Please visit the doctor section on our website for detailed pricing information.',
+        'doctor cost': 'The cost to book a doctor varies. Please visit the doctor section on our website for detailed pricing information.',
+        'how much is an appointment?': 'The cost of an appointment varies. Please visit the doctor section on our website for detailed pricing information.',
+        'thank you': 'Thanks for choosing SevaSankalp! Stay healthy!',
+    'thanks': 'Thanks for choosing SevaSankalp! Stay healthy!',
+    'bye': 'Goodbye! Take care and stay healthy!',
+    'goodbye': 'Goodbye! Take care and stay healthy!',
+    // Funny Tricky Health Questions and Answers
+    'Can I get a six-pack by eating six packs of chips?': 'Haha, unfortunately, it takes more than just chips to get a six-pack! A balanced diet and regular exercise are the way to go.',
+    'If swimming is good for your shape, then why do whales look the way they do?': 'Whales are majestic creatures, but their shape is a result of adaptation to their aquatic environment. Humans and whales have different needs!',
+    'Is chocolate good for the brain?': 'While chocolate may boost your mood, it\'s not a brain superfood. Enjoy it in moderation for a treat!',
+    'Can I lose weight by thinking about exercising?': 'While positive thinking can be powerful, it won\'t burn calories. Time to get moving!',
+    'Do I burn calories when I sleep?': 'Yes, your body burns calories even while you sleep, but not as many as when you\'re active. Sweet dreams and calorie burning!',
+    'Does laughter burn calories?': 'Yes, laughing can burn a few extra calories, but you\'ll need more than just a good joke to reach your fitness goals!',
+    // More Funny Questions and Answers
+    'Is it true that carrots improve your eyesight?': 'Carrots won\'t give you superhuman vision, but they are packed with nutrients that support eye health!',
+    'Can I get a 6-pack from doing sit-ups while watching TV?': 'As tempting as that sounds, six-pack abs require a combination of exercise, diet, and dedication – not just TV time!',
+    'If I eat fruit loops, am I still eating fruit?': 'While they might have the word "fruit" in the name, Fruit Loops are more like a sugary cereal rainbow than a nutritious fruit salad!',
+    'Is it healthy to eat an entire pizza by myself?': 'While pizza is delicious, it\'s best enjoyed in moderation as part of a balanced diet. Sharing is caring!',
+    'Will drinking water make me smarter?': 'Staying hydrated is essential for overall health, but don\'t expect water to turn you into a genius overnight!',
+    'Can I replace exercise with caffeine?': 'While caffeine might give you a temporary energy boost, it can\'t replace the numerous benefits of regular exercise. Get moving!',
+    
     };
+
+       
+    
 
     const quickReplies = [
         { text: 'Payment', key:  'what payment methods do you accept' },
@@ -217,8 +242,8 @@ const Chatbot = () => {
                         ))}
                     </div>
                     <div className="input-container">
-                        <button className="mic-button" onClick={handleVoiceInput} aria-label="Voice input">
-                            <FontAwesomeIcon icon={isListening ? faMicrophoneSlash : faMicrophone} />
+                        <button className="mic-button" onClick={handleVoiceInput} aria-label="Voice input" style={{ border: 'none', color: 'blue' }}>
+                            <FontAwesomeIcon icon={isListening ? faMicrophone : faMicrophoneSlash} />
                         </button>
                         <input type="text" placeholder="Type your message..." onKeyDown={handleUserMessage} aria-label="Type your message here" />
                         <button className="send-button" onClick={handleUserMessage} aria-label="Send message">
