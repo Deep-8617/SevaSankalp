@@ -89,11 +89,6 @@ const Chatbot = () => {
         'Will drinking water make me smarter?': 'Staying hydrated is essential for overall health, but don\'t expect water to turn you into a genius overnight!',
         'Can I replace exercise with caffeine?': 'While caffeine might give you a temporary energy boost, it can\'t replace the numerous benefits of regular exercise. Get moving!',
 
-
-        'नमस्ते': 'मैं आपकी कैसे सहायता कर सकता हूँ?',
-        'मेरे पेट में दर्द हो रहा है, क्या करूँ?': 'कृपया अपने नजदीकी डॉक्टर से परामर्श करें।',
-        'डॉक्टर का समय क्या है?': 'डॉक्टर के समय के लिए कृपया हमारे डॉक्टर खंड में जाएं या हमसे संपर्क करें।',
-        'कैसे बुक करें?': 'अपनी बीमारी के अनुसार अपने पसंदीदा डॉक्टर को डॉक्टर खंड में चुनें, अन्यथा हमारे संपर्क विकल्प में जाएं और हमसे संपर्क करें।'
         
     };
 
