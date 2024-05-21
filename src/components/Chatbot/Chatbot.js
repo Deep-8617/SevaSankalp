@@ -70,24 +70,31 @@ const Chatbot = () => {
         'doctor cost': 'The cost to book a doctor varies. Please visit the doctor section on our website for detailed pricing information.',
         'how much is an appointment?': 'The cost of an appointment varies. Please visit the doctor section on our website for detailed pricing information.',
         'thank you': 'Thanks for choosing SevaSankalp! Stay healthy!',
-    'thanks': 'Thanks for choosing SevaSankalp! Stay healthy!',
-    'bye': 'Goodbye! Take care and stay healthy!',
-    'goodbye': 'Goodbye! Take care and stay healthy!',
-    // Funny Tricky Health Questions and Answers
-    'Can I get a six-pack by eating six packs of chips?': 'Haha, unfortunately, it takes more than just chips to get a six-pack! A balanced diet and regular exercise are the way to go.',
-    'If swimming is good for your shape, then why do whales look the way they do?': 'Whales are majestic creatures, but their shape is a result of adaptation to their aquatic environment. Humans and whales have different needs!',
-    'Is chocolate good for the brain?': 'While chocolate may boost your mood, it\'s not a brain superfood. Enjoy it in moderation for a treat!',
-    'Can I lose weight by thinking about exercising?': 'While positive thinking can be powerful, it won\'t burn calories. Time to get moving!',
-    'Do I burn calories when I sleep?': 'Yes, your body burns calories even while you sleep, but not as many as when you\'re active. Sweet dreams and calorie burning!',
-    'Does laughter burn calories?': 'Yes, laughing can burn a few extra calories, but you\'ll need more than just a good joke to reach your fitness goals!',
-    // More Funny Questions and Answers
-    'Is it true that carrots improve your eyesight?': 'Carrots won\'t give you superhuman vision, but they are packed with nutrients that support eye health!',
-    'Can I get a 6-pack from doing sit-ups while watching TV?': 'As tempting as that sounds, six-pack abs require a combination of exercise, diet, and dedication – not just TV time!',
-    'If I eat fruit loops, am I still eating fruit?': 'While they might have the word "fruit" in the name, Fruit Loops are more like a sugary cereal rainbow than a nutritious fruit salad!',
-    'Is it healthy to eat an entire pizza by myself?': 'While pizza is delicious, it\'s best enjoyed in moderation as part of a balanced diet. Sharing is caring!',
-    'Will drinking water make me smarter?': 'Staying hydrated is essential for overall health, but don\'t expect water to turn you into a genius overnight!',
-    'Can I replace exercise with caffeine?': 'While caffeine might give you a temporary energy boost, it can\'t replace the numerous benefits of regular exercise. Get moving!',
-    
+        'thanks': 'Thanks for choosing SevaSankalp! Stay healthy!',
+        'bye': 'Goodbye! Take care and stay healthy!',
+        'goodbye': 'Goodbye! Take care and stay healthy!',
+        'who created you ?': 'I was created by the SevaSankalp team to assist you with your healthcare questions. How can I help you today?',
+        // Funny Tricky Health Questions and Answers
+        'Can I get a six-pack by eating six packs of chips?': 'Haha, unfortunately, it takes more than just chips to get a six-pack! A balanced diet and regular exercise are the way to go.',
+        'If swimming is good for your shape, then why do whales look the way they do?': 'Whales are majestic creatures, but their shape is a result of adaptation to their aquatic environment. Humans and whales have different needs!',
+        'Is chocolate good for the brain?': 'While chocolate may boost your mood, it\'s not a brain superfood. Enjoy it in moderation for a treat!',
+        'Can I lose weight by thinking about exercising?': 'While positive thinking can be powerful, it won\'t burn calories. Time to get moving!',
+        'Do I burn calories when I sleep?': 'Yes, your body burns calories even while you sleep, but not as many as when you\'re active. Sweet dreams and calorie burning!',
+        'Does laughter burn calories?': 'Yes, laughing can burn a few extra calories, but you\'ll need more than just a good joke to reach your fitness goals!',
+        // More Funny Questions and Answers
+        'Is it true that carrots improve your eyesight?': 'Carrots won\'t give you superhuman vision, but they are packed with nutrients that support eye health!',
+        'Can I get a 6-pack from doing sit-ups while watching TV?': 'As tempting as that sounds, six-pack abs require a combination of exercise, diet, and dedication – not just TV time!',
+        'If I eat fruit loops, am I still eating fruit?': 'While they might have the word "fruit" in the name, Fruit Loops are more like a sugary cereal rainbow than a nutritious fruit salad!',
+        'Is it healthy to eat an entire pizza by myself?': 'While pizza is delicious, it\'s best enjoyed in moderation as part of a balanced diet. Sharing is caring!',
+        'Will drinking water make me smarter?': 'Staying hydrated is essential for overall health, but don\'t expect water to turn you into a genius overnight!',
+        'Can I replace exercise with caffeine?': 'While caffeine might give you a temporary energy boost, it can\'t replace the numerous benefits of regular exercise. Get moving!',
+
+
+        'नमस्ते': 'मैं आपकी कैसे सहायता कर सकता हूँ?',
+        'मेरे पेट में दर्द हो रहा है, क्या करूँ?': 'कृपया अपने नजदीकी डॉक्टर से परामर्श करें।',
+        'डॉक्टर का समय क्या है?': 'डॉक्टर के समय के लिए कृपया हमारे डॉक्टर खंड में जाएं या हमसे संपर्क करें।',
+        'कैसे बुक करें?': 'अपनी बीमारी के अनुसार अपने पसंदीदा डॉक्टर को डॉक्टर खंड में चुनें, अन्यथा हमारे संपर्क विकल्प में जाएं और हमसे संपर्क करें।'
+        
     };
 
        
