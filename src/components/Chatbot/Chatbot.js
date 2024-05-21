@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComments, faPaperPlane, faTimes, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faComments, faPaperPlane, faTimes, faTrashAlt, faVolumeUp, faVolumeMute } from '@fortawesome/free-solid-svg-icons';
 import stringSimilarity from 'string-similarity';
 import './Chatbot.css';
 
 const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [isVoiceOn, setIsVoiceOn] = useState(true);
     const initialMessage = { from: 'bot', text: 'Welcome to SevaSankalp! I am your SevaBot, How can I assist you today?' };
     const [messages, setMessages] = useState([initialMessage]);
     const messagesEndRef = useRef(null);
@@ -98,6 +99,20 @@ const Chatbot = () => {
             ...prevMessages,
             { from: 'bot', text: botResponse }
         ]);
+
+        if (isVoiceOn) {
+            speak(botResponse);
+        }
+    };
+
+    const speak = (text) => {
+        const utterance = new SpeechSynthesisUtterance(text);
+        // Specify the voice to an Indian female voice speaking Indian English
+        const indianVoice = speechSynthesis.getVoices().find(voice => voice.lang === 'en-IN' && voice.name.includes('female'));
+        if (indianVoice) {
+            utterance.voice = indianVoice;
+        }
+        window.speechSynthesis.speak(utterance);
     };
 
     useEffect(() => {
@@ -121,6 +136,9 @@ const Chatbot = () => {
                         </button>
                         <button className="clear-button" onClick={handleClearChat} aria-label="Clear chat">
                             <FontAwesomeIcon icon={faTrashAlt} />
+                        </button>
+                        <button className="voice-button" onClick={() => setIsVoiceOn(!isVoiceOn)} aria-label="Toggle voice">
+                            <FontAwesomeIcon icon={isVoiceOn ? faVolumeUp : faVolumeMute} />
                         </button>
                     </div>
                     <div className="messages">
