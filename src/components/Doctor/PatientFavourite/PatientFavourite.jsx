@@ -34,7 +34,7 @@ const PatientFavouriteDoctor = () => {
                 <div className="col-md-4 col-sm-12 mb-4 mx-2 rounded shadow-sm" key={item?.id} style={{ background: '#f8f9fa', maxWidth: '20rem' }}>
                     <div className='rounded position-relative'>
                         <div className='fav-img my-3 d-flex justify-content-center'>
-                            <img alt="" src={img} />
+                            <img alt="" src={item?.doctor?.img} />
                         </div>
                         <div style={{ cursor: 'pointer' }} className="m-2 text-success position-absolute top-0 end-0 me-2" onClick={() => handleRemoveFavourite(item?.doctor?.id)}>
                             <FaBookmark />
@@ -58,17 +58,17 @@ const PatientFavouriteDoctor = () => {
                                     starDimension="20px"
                                     starSpacing="5px"
                                 />
-                                <span className="d-inline-block text-secondary mt-2">(27)</span>
+                                <span className="d-inline-block text-secondary mt-2">(5)</span>
                             </div>
                             <ul className="available-info">
                                 <li>
-                                    <FaLocationArrow className='icon' /> Georgia, USA
+                                    <FaLocationArrow className='icon' />{item?.doctor?.address}
                                 </li>
                                 <li>
-                                    <FaClock className='icon' /> Available on Fri, 22 Mar
+                                    <FaClock className='icon' /> {item?.doctor?.clinicName}
                                 </li>
                                 <li>
-                                    <FaDollarSign className='icon' /> $100 - $400
+                                    <FaDollarSign className='icon' />{item?.doctor?.price}
                                 </li>
                             </ul>
                             <div className="d-flex justify-content-between mb-3 mt-2">
