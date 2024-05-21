@@ -43,7 +43,7 @@ const Appointments = () => {
                         <div className="d-flex justify-content-between align-items-center">
                             <div className="d-flex align-items-center gap-3">
                                 <Link to={`/`} className="patient-img">
-                                    <img src={img} alt="" />
+                                    <img src={item?.patient?.img} alt="" />
                                 </Link>
                                 <div className="patients-info">
                                     <h5>{item?.patient?.firstName + ' ' + item?.patient?.lastName}</h5>
