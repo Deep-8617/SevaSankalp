@@ -46,7 +46,7 @@ const Chatbot = () => {
     'how can I prevent a stroke?': 'To prevent a stroke, you can maintain a healthy lifestyle by eating a balanced diet, exercising regularly, maintaining a healthy weight, not smoking, limiting alcohol consumption, and managing underlying health conditions such as high blood pressure, diabetes, and high cholesterol. Additionally, consult with your healthcare provider for personalized stroke prevention strategies.',
     'what are the symptoms of depression?': 'Symptoms of depression may include persistent sadness, feelings of hopelessness or emptiness, loss of interest or pleasure in activities once enjoyed, changes in appetite or weight, difficulty sleeping or oversleeping, fatigue, feelings of worthlessness or guilt, difficulty concentrating or making decisions, and thoughts of death or suicide. If you or someone you know experiences these symptoms, seek help from a healthcare professional.',
     'how can I support someone with depression?': 'To support someone with depression, you can listen to them without judgment, offer emotional support, encourage them to seek professional help, help them maintain a healthy lifestyle, and be patient and understanding. Additionally, educate yourself about depression and available treatment options.',
-    'who created you?': 'Upayan and Deep.'
+    'who created you?': 'Upayan and Deep created me.'
 
     };
 
