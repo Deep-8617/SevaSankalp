@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import characterImage from 'C:/Users/DEEP/Documents/GitHub/Doctor-Appointment-master/src/components/Admin/portrait-3d-male-doctor1.png';
+
+import backgroundImage from 'C:/Users/DEEP/Documents/GitHub/Doctor-Appointment-master/src/components/Admin/us_pro.jpg';
 
 const AdminLogin = () => {
   const [username, setUsername] = useState("");
@@ -11,14 +14,11 @@ const AdminLogin = () => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    // Hardcoded credentials
     const user = "admin";
     const pass = "Admin@123";
 
     if (username === user && password === pass) {
       localStorage.setItem("adminAuthenticated", "true");
-
-      // Navigate to the admin dashboard
       navigate("/admin/dashboard");
     } else {
       setError("Invalid username or password");
@@ -35,91 +35,60 @@ const AdminLogin = () => {
     setShowPassword(!showPassword);
   };
 
-  const containerStyle = {
-    background: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
-    minHeight: "100vh",
-    padding: "20px",
-  };
-
-  const cardStyle = {
-    border: "none",
-    borderRadius: "15px",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-  };
-
-  const buttonStyle = {
-    borderRadius: "50px",
-    transition: "background-color 0.3s, transform 0.3s",
-  };
-
-  const buttonPrimaryStyle = {
-    backgroundColor: "#007bff",
-    borderColor: "#007bff",
-  };
-
-  const buttonPrimaryHoverStyle = {
-    backgroundColor: "#0056b3",
-    transform: "scale(1.05)",
-  };
-
   return (
-    <div className="container vh-100 d-flex align-items-center justify-content-center" style={containerStyle}>
-      <div className="row w-100">
-        <div className="col-md-6 offset-md-3">
-          <div className="card" style={cardStyle}>
-            <div className="card-body">
-              <div className="text-center mb-4">
-                <img
-                  src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png"
-                  className="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
-                  width="200px"
-                  alt="profile"
-                />
-                <h2 className="text-center text-primary">Admin Login</h2>
-              </div>
-              {error && <p className="text-danger text-center">{error}</p>}
-              <div className="mb-3">
-                <input
-                  type="text"
-                  className="form-control"
-                  id="Username"
-                  name="username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  placeholder="Username"
-                  onKeyDown={handleKeyDown}
-                />
-              </div>
-              <div className="mb-3 position-relative">
-                <input
-                  type={showPassword ? "text" : "password"}
-                  className="form-control pr-5"
-                  id="password"
-                  name="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Password"
-                  onKeyDown={handleKeyDown}
-                />
-                <FontAwesomeIcon
-                  icon={showPassword ? faEyeSlash : faEye}
-                  className="position-absolute end-0 top-50 translate-middle-y"
-                  style={{ cursor: "pointer", right: "10px" }}
-                  onClick={togglePasswordVisibility}
-                />
-              </div>
-              <div className="text-center">
-                <button
-                  className="btn btn-primary btn-block"
-                  onClick={handleLogin}
-                  style={buttonStyle}
-                  onMouseOver={(e) => (e.currentTarget.style = { ...buttonStyle, ...buttonPrimaryHoverStyle })}
-                  onMouseOut={(e) => (e.currentTarget.style = { ...buttonStyle, ...buttonPrimaryStyle })}
-                >
-                  Login
-                </button>
-              </div>
-            </div>
+    <div style={{ display: 'flex', minHeight: '100vh', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center top', filter: 'blur(8px)', zIndex: -1 }}></div>
+      <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+        <img src={characterImage} alt="Character" style={{ position: 'absolute', bottom: '0', left: '0', height: '70%', zIndex: 1 }} />
+      </div>
+      <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1 }}>
+        <div style={{ width: '300px', padding: '20px', borderRadius: '15px', backgroundColor: 'rgba(255, 255, 255, 0.3)', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1), 0 0 15px rgba(0, 123, 255, 0.5)' }}>
+          <h2 className="text-center text-primary">Welcome to admin page</h2>
+          <p className="text-center">Please enter your User namet and password</p>
+          {error && <p className="text-danger text-center">{error}</p>}
+          <div className="mb-3">
+            <input
+              type="text"
+              className="form-control"
+              id="Username"
+              name="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="User name"
+              onKeyDown={handleKeyDown}
+            />
+          </div>
+          <div className="mb-3 position-relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              className="form-control pr-5"
+              id="password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              onKeyDown={handleKeyDown}
+            />
+            <FontAwesomeIcon
+              icon={showPassword ? faEyeSlash : faEye}
+              className="position-absolute end-0 top-50 translate-middle-y"
+              style={{ cursor: "pointer", right: "10px" }}
+              onClick={togglePasswordVisibility}
+            />
+          </div>
+          <div className="text-center">
+            <button
+              className="btn btn-primary btn-block"
+              onClick={handleLogin}
+              style={{ borderRadius: '50px', backgroundColor: '#007bff', borderColor: '#007bff', transition: 'background-color 0.3s, transform 0.3s' }}
+              onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#0056b3')}
+              onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#007bff')}
+            >
+              Login
+            </button>
+          </div>
+          <div className="text-center mt-3">
+            <a href="/forgot-password" className="text-primary">Forgot Password?</a>
           </div>
         </div>
       </div>
