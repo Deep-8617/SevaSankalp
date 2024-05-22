@@ -114,7 +114,7 @@ const CheckoutPage = ({ handleChange, selectValue, isCheck, setIsChecked, data, 
                 <div className="col-md-5 col-sm-12">
                     <div className="rounded p-3" style={{ background: "#f8f9fa" }}>
                         {data && <Link to={`/doctors/profile/${data?.id}`} className="booking-doc-img d-flex justify-content-center mb-2">
-                            <img src={img} alt="" />
+                            <img src={data?.img} alt="" />
                         </Link>}
                         {data && <div className='doc-title-info mt-3 mb-3'>
                             <h5 className='mt-3 text-center' style={{
@@ -132,15 +132,15 @@ const CheckoutPage = ({ handleChange, selectValue, isCheck, setIsChecked, data, 
                                 <li>Time <span>{selectTime}</span></li>
                             </ul>
                             <ul className="booking-fee">
-                                <li>Consulting Fee <span>${price}</span></li>
-                                <li>Booking Fee <span>$10</span></li>
-                                <li>GST (Including 18%) <span>$ {vat}</span></li>
+                                <li>Consulting Fee <span>₹{price}</span></li>
+                                <li>Booking Fee <span>₹10</span></li>
+                                <li>GST (Including 18%) <span>₹{vat}</span></li>
                             </ul>
 
                             <ul className="booking-total">
                                 <li className='d-flex justify-content-between'>
                                     <span className='fw-bold'>Total</span>
-                                    <span className="total-cost" style={{ color: '#1977cc' }}>${(Number(price) + 10 + Number(vat))}</span>
+                                    <span className="total-cost" style={{ color: '#1977cc' }}>₹{(Number(price) + 10 + Number(vat))}</span>
                                 </li>
                             </ul>
                         </div>
