@@ -90,7 +90,7 @@ const AdminLogin = () => {
 
       <MDBRow>
         <MDBCol col='10' md='6'>
-          <img src="https://cdn.pixabay.com/photo/2012/04/18/19/51/doctor-37707_1280.png" className="img-fluid" alt="Phone image" />
+          <img src="https://cdn.pixabay.com/photo/2020/08/03/09/39/medical-5459631_1280.png" className="img-fluid" alt="Phone image" />
         </MDBCol>
 
         <MDBCol col='4' md='6'>
