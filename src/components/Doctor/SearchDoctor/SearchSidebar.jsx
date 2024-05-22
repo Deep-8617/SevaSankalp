@@ -61,7 +61,8 @@ const SearchSidebar = ({ setSearchTerm, setSorByGender, setSpecialist, setPriceR
 
         <div className='mb-3'>
           <h6 style={{ color: '#05335c' }}>Price Range</h6>
-          <Slider range defaultValue={[75, 150]} onChange={onRangeChange} />
+          {/*<Slider range defaultValue={[75, 150]} onChange={onRangeChange}  this is original code />*/}
+          <Slider range min={0} max={2000} defaultValue={[300, 1500]} onChange={onRangeChange} />
         </div>
 
         <div className='mb-3'>
