@@ -96,7 +96,7 @@ const AdminLogin = () => {
         <MDBCol col='4' md='6'>
           <MDBCard className="login-card">
             <MDBCardBody>
-              <h3 className="mb-4 admin-login-heading">Admin Login</h3>
+              <h3 className="mb-4 admin-login-heading" style={{ color: "#1977CC"}}>Admin Login</h3>
 
               <MDBInput wrapperClass='mb-4' label='Username' id='formControlLg' type='text' size="md" style={{ width: '100%' }}
                 onChange={(e) => setUsername(e.target.value)} />
