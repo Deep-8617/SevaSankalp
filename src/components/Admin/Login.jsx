@@ -91,8 +91,8 @@ const AdminLogin = () => {
       </style>
 
       <MDBRow>
-        <MDBCol col='10' md='6'>
-          <img src="https://cdn.pixabay.com/photo/2020/08/03/09/39/medical-5459631_1280.png" className="img-fluid" alt="Phone image" />
+        <MDBCol col='10' md='4' className="image-container">
+          <img src="https://cdn.pixabay.com/photo/2021/11/20/03/13/female-doctor-6810748_1280.png" className="img-fluid" alt="Phone image" />
         </MDBCol>
 
         <MDBCol col='4' md='6'>
