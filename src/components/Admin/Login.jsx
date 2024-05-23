@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { message } from 'antd';
 import {
   MDBContainer,
   MDBCol,
@@ -27,6 +28,7 @@ const AdminLogin = () => {
 
       // Navigate to the admin dashboard
       navigate("/admin/dashboard");
+      message.success('Successfully Logged in');
     } else {
       setError("Invalid username or password");
     }
