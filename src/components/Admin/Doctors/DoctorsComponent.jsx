@@ -44,7 +44,7 @@ const DoctorsComponent = () => {
                   <td>{item.designation}</td>
                   <td>{item.clinicName}</td>
                   <td>{item.experienceHospitalName}</td>
-                  <td>${item.price}</td>
+                  <td>₹{item.price}</td>
                   <td>{item.city}</td>
                 </tr>
               ))}
