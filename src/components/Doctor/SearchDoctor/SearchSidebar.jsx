@@ -83,3 +83,7 @@ const SearchSidebar = ({ setSearchTerm, setSorByGender, setSpecialist, setPriceR
 }
 
 export default SearchSidebar
+//searchsidebar
+/*
+  updated
+*/
